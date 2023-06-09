@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 09, 2023 at 09:01 AM
+-- Generation Time: Jun 09, 2023 at 11:28 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -65,6 +65,9 @@ CREATE TABLE `tbl_asesi` (
   `tahunmasuk_asesi` varchar(50) NOT NULL,
   `tahunlulus_asesi` varchar(50) NOT NULL,
   `jurusan_asesi` varchar(50) NOT NULL,
+  `programstudi_asesi` varchar(50) NOT NULL,
+  `email_asesi` varchar(50) NOT NULL,
+  `password_asesi` varchar(50) NOT NULL,
   `foto_asesi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -72,9 +75,10 @@ CREATE TABLE `tbl_asesi` (
 -- Dumping data for table `tbl_asesi`
 --
 
-INSERT INTO `tbl_asesi` (`id_asesi`, `nim_asesi`, `nik_asesi`, `nama_asesi`, `alamat_asesi`, `notlp_asesi`, `jeniskelamin_asesi`, `agama_asesi`, `tempatlahir_asesi`, `tanggallahir_asesi`, `provinsi_asesi`, `kotakab_asesi`, `tahunmasuk_asesi`, `tahunlulus_asesi`, `jurusan_asesi`, `foto_asesi`) VALUES
-(1, '', '', '', '', '', 'laki', '', '', '', '', '', '', '', 'ee', '1686298825-3409.jpg'),
-(3, '11', '22', 'sgdws', 'wwvg', '131414', 'Laki-Laki', '', '', '', '', '', '', '', 'dd', '1686300498-download.jpg');
+INSERT INTO `tbl_asesi` (`id_asesi`, `nim_asesi`, `nik_asesi`, `nama_asesi`, `alamat_asesi`, `notlp_asesi`, `jeniskelamin_asesi`, `agama_asesi`, `tempatlahir_asesi`, `tanggallahir_asesi`, `provinsi_asesi`, `kotakab_asesi`, `tahunmasuk_asesi`, `tahunlulus_asesi`, `jurusan_asesi`, `programstudi_asesi`, `email_asesi`, `password_asesi`, `foto_asesi`) VALUES
+(1, '', '', '', '', '', 'laki', '', '', '', '', '', '', '', 'ee', '', '', '', '1686298825-3409.jpg'),
+(3, '11', '22', 'sgdws', 'wwvg', '131414', 'Laki-Laki', '', '', '', '', '', '', '', 'dd', '', '', '', '1686300498-download.jpg'),
+(4, '1212', '123322', 'sfasa', 'srqxd', '1213421', 'Laki-Laki', 'Kristen', 'WDW', '2023-06-10', 'SDS', 'QQWW1', '21919', '1313', 'WD', '', '', '', '1686309152-download.jpg');
 
 -- --------------------------------------------------------
 
@@ -107,7 +111,7 @@ CREATE TABLE `tbl_pengaturan` (
   `id_pengaturan` int NOT NULL,
   `visi` varchar(250) NOT NULL,
   `misi` varchar(250) NOT NULL,
-  `struktur_organisasi` varchar(50) NOT NULL,
+  `struktur_organisasi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `kontak` varchar(20) NOT NULL,
   `id_admin` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -117,8 +121,9 @@ CREATE TABLE `tbl_pengaturan` (
 --
 
 INSERT INTO `tbl_pengaturan` (`id_pengaturan`, `visi`, `misi`, `struktur_organisasi`, `kontak`, `id_admin`) VALUES
-(1, 'okee', 'yyyta', 'adda', '0889', 5),
-(2, 'yadfd', 'efefef', 'ttfcrdxwec', '6664543', 1);
+(8, 'okee', 'yyyta', '1686306093-download.jpg', '0889', 4),
+(10, 'okee', 'yyyta', '1686306500-3409.jpg', '6664543', 5),
+(12, 'wrw', 'weee', '1686309368-3D Mockup MATAKODING BIRU.jpg', 'w3ew', 1);
 
 -- --------------------------------------------------------
 
@@ -141,7 +146,8 @@ CREATE TABLE `tbl_skema` (
 INSERT INTO `tbl_skema` (`id_skema`, `kode_skema`, `nama_skema`, `apl01`, `apl02`) VALUES
 (1, '22', 'de', '77736ghdv', 'ubysgb'),
 (3, '11', '22', '33', '44'),
-(4, 'mks762b', '22dd', 'wsers', 'fefw');
+(4, 'mks762b', '22dd', 'wsers', 'fefw'),
+(5, 'dd', 'dfs', 'dfs', 'sdf');
 
 --
 -- Indexes for dumped tables
@@ -191,7 +197,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_asesi`
 --
 ALTER TABLE `tbl_asesi`
-  MODIFY `id_asesi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_asesi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_event`
@@ -203,13 +209,13 @@ ALTER TABLE `tbl_event`
 -- AUTO_INCREMENT for table `tbl_pengaturan`
 --
 ALTER TABLE `tbl_pengaturan`
-  MODIFY `id_pengaturan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pengaturan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_skema`
 --
 ALTER TABLE `tbl_skema`
-  MODIFY `id_skema` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_skema` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

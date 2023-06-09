@@ -41,7 +41,7 @@ class Pengaturan extends CI_Controller {
 	{
 		$cek = $this->pengaturan->detail($id)->row_array();
 		if($cek == null){
-			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data tidak ditemukan');
+			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
 			redirect(base_url('pengaturan'),'refresh');
 		}else{
 
@@ -61,25 +61,37 @@ class Pengaturan extends CI_Controller {
 
 	public function insert()
 	{
-		$this->form_validation->set_rules('visi', 'required',
+		$this->form_validation->set_rules('visi', 'Visi', 'required',
 		array( 'required'  => '%s harus diisi!'));
 
 		if ($this->form_validation->run()) 
 		{
 
+			$image 								= time().'-'.$_FILES["struktur_organisasi"]['name']; //data post dari form
+			$config['upload_path'] 				= './public/image/upload/strukturorganisasi/'; //lokasi folder foto produk
+			$config['allowed_types'] 			= 'gif|jpg|png|jpeg'; //jenis file yang boleh diijinkan
+			$config['max_size']  				= '25000'; //maksimal 25Mb
+			$config['file_name']  				= $image; //ubah nama file berdasarkan waktu
+
+			$this->load->library('upload', $config); //panggil librarys upload
+			$this->upload->do_upload('struktur_organisasi'); //upload foto produk
+
 			$data = array(
 				'visi'     => $this->input->post('visi'),
 				'misi'   			=> $this->input->post('misi'),
-				'struktur_organisasi'   		=> $this->input->post('struktur_organisasi'),
+				'struktur_organisasi'		=> $image,
 				'kontak'   			=> $this->input->post('kontak'),
 				'id_admin'   			=> $this->input->post('id_admin')
 			);
 
 			$q = $this->pengaturan->insert($data);
 
-			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat, Tambah data berhasil');
+			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat, Tambah Data Berhasil');
 			redirect(base_url('pengaturan'),'refresh');
 
+		}else{
+			$this->session->set_flashdata('error', '<i class="fa fa-close"></i> gagal, Data Tidak Lengkap');
+			redirect(base_url('pengaturan'),'refresh');
 		}
 
 		
@@ -96,22 +108,45 @@ class Pengaturan extends CI_Controller {
 				$this->form_validation->set_rules('id_pengaturan', 'ID pengaturan', 'required',
 				array( 'required'  => '%s harus diisi!'));
 
-				if ($this->form_validation->run()) 
-				{
+				if($_FILES["struktur_organisasi"]['name'] == ""){ //jika tidak ada upload foto
+
 					$data = array(
-						'id_pengaturan'		=> $this->input->post('id_pengaturan'),
 						'visi'     => $this->input->post('visi'),
 						'misi'   			=> $this->input->post('misi'),
-						'struktur_organisasi'   		=> $this->input->post('struktur_organisasi'),
 						'kontak'   			=> $this->input->post('kontak'),
 						'id_admin'   			=> $this->input->post('id_admin')
-					);
-					$this->pengaturan->update($data);
+						);
+
+						$q = $this->pengaturan->update($data);
+
+				}else{//jika ada upload foto
+
+					$image 								= time().'-'.$_FILES["struktur_organisasi"]['name']; //data post dari form
+					$config['upload_path'] 				= './public/image/upload/strukturorganisasi/'; //lokasi folder foto produk
+					$config['allowed_types'] 			= 'gif|jpg|png|jpeg'; //jenis file yang boleh diijinkan
+					$config['max_size']  				= '25000'; //maksimal 25Mb
+					$config['file_name']  				= $image; //ubah nama file berdasarkan waktu
+
+					$this->load->library('upload', $config); //panggil librarys upload
+					$this->upload->do_upload('struktur_organisasi'); //upload foto produk
+
+						$data = array(
+							'visi'     => $this->input->post('visi'),
+							'misi'   			=> $this->input->post('misi'),
+							'struktur_organisasi'		=> $image,
+							'kontak'   			=> $this->input->post('kontak'),
+							'id_admin'   			=> $this->input->post('id_admin')
+							
+
+						);
+						
+						$q = $this->pengaturan->update($data);
 			
 					$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
+					$this->pengaturan->update($data);
 					redirect(base_url('pengaturan'),'refresh');
-				}else{
-					$this->session->set_flashdata('warning', '<i class="fa fa-check"></i> Peringatan! Data Belum Lengkap');
+				
+					$this->session->set_flashdata('warning', '<i class="fa fa-check"></i> Peringatan! Data Tidak Lengkap');
 					redirect(base_url('pengaturan/edit/'.$this->input->post('id')),'refresh');
 				}
 

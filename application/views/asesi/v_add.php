@@ -42,14 +42,14 @@
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Nim</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Nim" name="nim_asesi" required>
+                            <input type="number" class="form-control" placeholder="Nim" name="nim_asesi" required>
                           </div>
                       </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Nik</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Nik" name="nik_asesi" required>
+                            <input type="number" class="form-control" placeholder="Nik" name="nik_asesi" required>
                           </div>
                       </div>
 
@@ -70,7 +70,7 @@
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">No. Telp</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="No. Telp" name="notlp_asesi" required>
+                            <input type="number" class="form-control" placeholder="No. Telp" name="notlp_asesi" required>
                           </div>
                       </div>
 
@@ -84,9 +84,84 @@
 							      	</div>
 
                       <div class="form-group">
+												<label class="col-md-3 control-label" for="exampleInputEmail1">Agama Pemohon:</label>
+												<select class="form-control" id="agama_asesi" name="agama_asesi">
+													<option value="">Pilih</option>
+													<option value="Islam">Islam</option>
+													<option value="Kristen">Kristen</option>
+                          <option value="Katholik">Katholik</option>
+                          <option value="Hindu">Hindu</option>
+                          <option value="Budha">Budha</option>
+												</select>
+							      	</div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Tempat Lahir</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempatlahir_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Tanggal Lahir</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tanggallahir_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Provinsi</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Provinsi" name="provinsi_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Kota / Kabupaten</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Kota / Kabupaten" name="kotakab_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Tahun Masuk</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="number" class="form-control" placeholder="Tahun Masuk" name="tahunmasuk_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Tahun Lulus</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="number" class="form-control" placeholder="Tahun Lulus" name="tahunlulus_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Jurusan</label>
                           <div class="input-group col-sm-8 col-md-8">
                             <input type="text" class="form-control" placeholder="Jurusan" name="jurusan_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Program Studi</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Program Studi" name="programstudi_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Email</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="email" class="form-control" placeholder="Email" name="email_asesi" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Password</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Password" name="password_asesi" required>
                           </div>
                       </div>
 
@@ -95,7 +170,7 @@
                             <div class="input-group col-sm-8 col-md-8">
                              <input type="file" class="form-control" id="foto_asesi" name="foto_asesi" id="exampleInputUpload Foto1" placeholder="Upload Foto">
                             </div>
-                        </div>
+                      </div>
                     </div>
                     
                     <div class="form-group">

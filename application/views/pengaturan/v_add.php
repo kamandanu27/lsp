@@ -53,10 +53,10 @@
                       </div>
 
                       <div class="form-group">
-                          <label class="col-md-3 control-label" for="ttl">Struktur Organisasi</label>
-                          <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Struktur Organisasi" name="struktur_organisasi" required>
-                          </div>
+                            <label class="col-sm-3 col-form-label">Struktur Organisasi</label>
+                            <div class="input-group col-sm-8 col-md-8">
+                             <input type="file" class="form-control" id="struktur_organisasi" name="struktur_organisasi" id="exampleInputUpload Foto1" placeholder="Upload Foto">
+                            </div>
                       </div>
 
                       <div class="form-group">

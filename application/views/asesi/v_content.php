@@ -49,7 +49,17 @@
                               <th style="width: 13%;text-align: center;">Alamat</th>
                               <th style="width: 13%;text-align: center;">No. Telp</th>
                               <th style="width: 15%;text-align: center;">Jenis Kelamin</th>
+                              <th style="width: 13%;text-align: center;">Agama</th>
+                              <th style="width: 13%;text-align: center;">Tempat Lahir</th>
+                              <th style="width: 13%;text-align: center;">Tanggal Lahir</th>
+                              <th style="width: 13%;text-align: center;">Provinsi</th>
+                              <th style="width: 13%;text-align: center;">Kota Kabupaten</th>
+                              <th style="width: 13%;text-align: center;">Tahun Masuk</th>
+                              <th style="width: 13%;text-align: center;">Tahun Lulus</th>
                               <th style="width: 15%;text-align: center;">Jurusan</th>
+                              <th style="width: 13%;text-align: center;">Program Studi</th>
+                              <th style="width: 13%;text-align: center;">Email</th>
+                              <th style="width: 13%;text-align: center;">Password</th>
                               <th style="width: 15%;text-align: center;">Foto</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
@@ -64,9 +74,19 @@
                               <td><?= $row->alamat_asesi ?></td>
                               <td><?= $row->notlp_asesi ?></td>
                               <td><?= $row->jeniskelamin_asesi ?></td>
+                              <td><?= $row->agama_asesi ?></td>
+                              <td><?= $row->tempatlahir_asesi ?></td>
+                              <td><?= $row->tanggallahir_asesi ?></td>
+                              <td><?= $row->provinsi_asesi ?></td>
+                              <td><?= $row->kotakab_asesi ?></td>
+                              <td><?= $row->tahunmasuk_asesi ?></td>
+                              <td><?= $row->tahunlulus_asesi ?></td>
                               <td><?= $row->jurusan_asesi ?></td>
+                              <td><?= $row->programstudi_asesi ?></td>
+                              <td><?= $row->email_asesi ?></td>
+                              <td><?= $row->password_asesi ?></td>
                               <td>
-									              <img src="<?= base_url()?>/public/image/upload/asesi/<?= $row->foto_asesi ?>" style="width: 80px; height: 100px;">
+									              <img src="<?= base_url() ?>/public/image/upload/asesi/<?= $row->foto_asesi ?>" style="width: 80px; height: 100px;">
 						            			</td>
 
                               <td style="text-align: center;">
