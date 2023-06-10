@@ -95,7 +95,7 @@
 							      	</div>
 
                       <div class="form-group">
-									       <label class="col-md-3 control-label">apl01</label>
+									       <label class="col-md-4 control-label">apl01</label>
                          <div class="input-group col-sm-8 col-md-8">
                             <select class="form-control" id="id_skema" name="id_skema">
                                 <option value="">Pilih</option>
@@ -107,7 +107,7 @@
 							      	</div>
 
                       <div class="form-group">
-									       <label class="col-md-3 control-label">apl02</label>
+									       <label class="col-md-4 control-label">apl02</label>
                          <div class="input-group col-sm-8 col-md-8">
                             <select class="form-control" id="id_skema" name="id_skema">
                                 <option value="">Pilih</option>
