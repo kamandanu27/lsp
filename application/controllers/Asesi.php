@@ -58,7 +58,7 @@ class Asesi extends CI_Controller {
 
 	public function insert()
 	{
-		$this->form_validation->set_rules('jeniskelamin_asesi', 'required',
+		$this->form_validation->set_rules('nim_asesi', 'Nim', 'required',
 		array( 'required'  => '%s harus diisi!'));
 
 			$image 								= time().'-'.$_FILES["foto_asesi"]['name']; //data post dari form

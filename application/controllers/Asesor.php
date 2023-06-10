@@ -58,7 +58,7 @@ class Asesor extends CI_Controller {
 
 	public function insert()
 	{
-		$this->form_validation->set_rules('jeniskelamin_asesor', 'required',
+		$this->form_validation->set_rules('noregister_asesor','No Register', 'required',
 		array( 'required'  => '%s harus diisi!'));
 
 			$image 								= time().'-'.$_FILES["foto_asesor"]['name']; //data post dari form
@@ -86,8 +86,8 @@ class Asesor extends CI_Controller {
 				'programstudi_asesor'   			=> $this->input->post('programstudi_asesor'),
 				'email_asesor'   			=> $this->input->post('email_asesor'),
 				'password_asesor'   			=> $this->input->post('password_asesor'),
-				'sertifikat_asesor'   			=> $this->input->post('sertifikat_asesor'),
-				'foto_asesor'		=> $image
+				'foto_asesor'		=> $image,
+				'sertifikat_asesor'   			=> $this->input->post('sertifikat_asesor')
 			);
 
 			$q = $this->asesor->insert($data);
@@ -162,8 +162,8 @@ class Asesor extends CI_Controller {
 							'programstudi_asesor'   			=> $this->input->post('programstudi_asesor'),
 							'email_asesor'   			=> $this->input->post('email_asesor'),
 							'password_asesor'   			=> $this->input->post('password_asesor'),
-							'sertifikat_asesor'   			=> $this->input->post('sertifikat_asesor'),
-							'foto_asesor'		=> $image
+							'foto_asesor'		=> $image,
+							'sertifikat_asesor'   			=> $this->input->post('sertifikat_asesor')
 
 						);
 						

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 10, 2023 at 04:26 AM
+-- Generation Time: Jun 10, 2023 at 06:49 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -32,7 +32,7 @@ CREATE TABLE `tbl_admin` (
   `nama_admin` varchar(50) NOT NULL,
   `email_admin` varchar(50) NOT NULL,
   `password_admin` varchar(30) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_admin`
@@ -55,7 +55,7 @@ CREATE TABLE `tbl_asesi` (
   `nik_asesi` varchar(50) NOT NULL,
   `nama_asesi` varchar(50) NOT NULL,
   `alamat_asesi` varchar(50) NOT NULL,
-  `notlp_asesi` varchar(50) NOT NULL,
+  `notlp_asesi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `jeniskelamin_asesi` varchar(50) NOT NULL,
   `agama_asesi` varchar(50) NOT NULL,
   `tempatlahir_asesi` varchar(50) NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE `tbl_asesi` (
   `email_asesi` varchar(50) NOT NULL,
   `password_asesi` varchar(50) NOT NULL,
   `foto_asesi` text NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_asesi`
@@ -77,8 +77,7 @@ CREATE TABLE `tbl_asesi` (
 
 INSERT INTO `tbl_asesi` (`id_asesi`, `nim_asesi`, `nik_asesi`, `nama_asesi`, `alamat_asesi`, `notlp_asesi`, `jeniskelamin_asesi`, `agama_asesi`, `tempatlahir_asesi`, `tanggallahir_asesi`, `provinsi_asesi`, `kotakab_asesi`, `tahunmasuk_asesi`, `tahunlulus_asesi`, `jurusan_asesi`, `programstudi_asesi`, `email_asesi`, `password_asesi`, `foto_asesi`) VALUES
 (4, '1212', '123322', 'sfasa', 'srqxd', '1213421', 'Laki-Laki', 'Kristen', 'WDW', '2023-06-10', 'SDS', 'QQWW1', '21919', '1313', 'WD', 'eee', 'qwsswe', '123', '1686309152-download.jpg'),
-(6, '65321', '2131', 'sgdws', 'srqxd', '2131', 'Perempuan', 'Kristen', '2131', '2023-06-15', 'qwedq', 'q21s1', '83353', '233', 'af23', 'qwr', 'ewtr2@ert4', '123', '1686370190-Logo.png'),
-(7, '43555', '5466233', 'alvin toma', 'cbc', '08897', 'Laki-Laki', 'Islam', 'cirebon', '2023-06-10', 'jabar', 'kota', '1954', '1978', 'ti', 'iya', 'abc@gmail.com', '12345', '1686370320-download.jpg');
+(7, '43555', '5466233', 'alvin toma', 'cbc', '08897', 'Laki-Laki', 'Islam', 'cirebon', '2023-06-10', 'jabar', 'kota', '1954', '1978', 'ti', 'iya', 'abc@gmail.com', '12345', '1686375441-3339.jpg');
 
 -- --------------------------------------------------------
 
@@ -103,16 +102,17 @@ CREATE TABLE `tbl_asesor` (
   `programstudi_asesor` varchar(50) NOT NULL,
   `email_asesor` varchar(50) NOT NULL,
   `password_asesor` varchar(50) NOT NULL,
-  `foto_asesor` date NOT NULL,
-  `sertifikat_asesor` text NOT NULL
-) ;
+  `foto_asesor` text NOT NULL,
+  `sertifikat_asesor` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_asesor`
 --
 
 INSERT INTO `tbl_asesor` (`id_asesor`, `noregister_asesor`, `nik_asesor`, `nama_asesor`, `alamat_asesor`, `notlp_asesor`, `jeniskelamin_asesor`, `agama_asesor`, `tempatlahir_asesor`, `tanggallahir_asesor`, `provinsi_asesor`, `kotakab_asesor`, `jurusan_asesor`, `programstudi_asesor`, `email_asesor`, `password_asesor`, `foto_asesor`, `sertifikat_asesor`) VALUES
-(1, '32425', '655657', 'toma', 'cbc', '0889', 'Laki-Laki', 'Islam', 'cirebon', '2023-06-10', 'jabar', 'kota cirebon', 'ti', 'iya', 'cbc@gmail.com', '12345', '0000-00-00', 'woke');
+(1, '32425', '655657', 'toma', 'cbc', '0889', 'Laki-Laki', 'Islam', 'cirebon', '2023-06-10', 'jabar', 'kota cirebon', 'ti', 'iya', 'cbc@gmail.com', '12345', '1686376137-3409.jpg', 'woke'),
+(2, '1212', '2211', 'adaaw', 'dadss', '22313', 'Perempuan', 'Katholik', 'cirebon', '2023-06-15', 'sdfddf', 'deeea', 'wewf', 'dsaaa', 'wrew2@dsds', '12345', '1686376151-download.jpg', 'woke');
 
 -- --------------------------------------------------------
 
@@ -125,7 +125,7 @@ CREATE TABLE `tbl_event` (
   `nama_event` varchar(50) NOT NULL,
   `tanggal_event` date NOT NULL,
   `jam_event` time NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_event`
@@ -138,6 +138,34 @@ INSERT INTO `tbl_event` (`id_event`, `nama_event`, `tanggal_event`, `jam_event`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_pendaftaran`
+--
+
+CREATE TABLE `tbl_pendaftaran` (
+  `id_pendaftaran` int NOT NULL,
+  `no_pendaftaran` varchar(50) NOT NULL,
+  `tgl_pendaftaran` date NOT NULL,
+  `id_asesi` int NOT NULL,
+  `id_asesor` int NOT NULL,
+  `id_skema` int NOT NULL,
+  `apl01` int NOT NULL,
+  `apl02` int NOT NULL,
+  `sertifikat` varchar(50) NOT NULL,
+  `status_pendaftaran` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_pendaftaran`
+--
+
+INSERT INTO `tbl_pendaftaran` (`id_pendaftaran`, `no_pendaftaran`, `tgl_pendaftaran`, `id_asesi`, `id_asesor`, `id_skema`, `apl01`, `apl02`, `sertifikat`, `status_pendaftaran`) VALUES
+(2, '31313', '2023-06-10', 4, 1, 1, 0, 0, 'sgeseww2', 'oke'),
+(3, '43342', '2023-06-10', 4, 2, 1, 0, 0, 'sges454541a', 'oke'),
+(4, '31313', '2023-06-10', 7, 1, 3, 0, 0, 'sgeseww2', 'asaa');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_pengaturan`
 --
 
@@ -145,10 +173,10 @@ CREATE TABLE `tbl_pengaturan` (
   `id_pengaturan` int NOT NULL,
   `visi` varchar(250) NOT NULL,
   `misi` varchar(250) NOT NULL,
-  `struktur_organisasi`varchar(250) NOT NULL,
+  `struktur_organisasi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `kontak` varchar(20) NOT NULL,
   `id_admin` int NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_pengaturan`
@@ -156,9 +184,9 @@ CREATE TABLE `tbl_pengaturan` (
 
 INSERT INTO `tbl_pengaturan` (`id_pengaturan`, `visi`, `misi`, `struktur_organisasi`, `kontak`, `id_admin`) VALUES
 (8, 'okee', 'yyyta', '1686306093-download.jpg', '0889', 4),
-(10, 'okee', 'yyyta', '1686306500-3409.jpg', '6664543', 5),
-(13, 'isi', 'oke', '1686366085-Matakoding HITAM TRANSPARAN.png', '0889', 4),
-(15, 'sd', 'tyguj', '1686368331-3D Mockup MATAKODING BIRU.jpg', '6664543', 1);
+(10, 'okee', 'yyyta', '1686372703-3339.jpg', '6664543', 5),
+(13, 'isi', 'oke', '1686372715-3409.jpg', '0889', 4),
+(16, 'isi', 'oke', '1686373784-download.jpg', '0889', 5);
 
 -- --------------------------------------------------------
 
@@ -172,7 +200,7 @@ CREATE TABLE `tbl_skema` (
   `nama_skema` varchar(50) NOT NULL,
   `apl01` varchar(30) NOT NULL,
   `apl02` varchar(30) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_skema`
@@ -213,6 +241,12 @@ ALTER TABLE `tbl_event`
   ADD PRIMARY KEY (`id_event`);
 
 --
+-- Indexes for table `tbl_pendaftaran`
+--
+ALTER TABLE `tbl_pendaftaran`
+  ADD PRIMARY KEY (`id_pendaftaran`);
+
+--
 -- Indexes for table `tbl_pengaturan`
 --
 ALTER TABLE `tbl_pengaturan`
@@ -244,7 +278,7 @@ ALTER TABLE `tbl_asesi`
 -- AUTO_INCREMENT for table `tbl_asesor`
 --
 ALTER TABLE `tbl_asesor`
-  MODIFY `id_asesor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_asesor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_event`
@@ -253,10 +287,16 @@ ALTER TABLE `tbl_event`
   MODIFY `id_event` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `tbl_pendaftaran`
+--
+ALTER TABLE `tbl_pendaftaran`
+  MODIFY `id_pendaftaran` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `tbl_pengaturan`
 --
 ALTER TABLE `tbl_pengaturan`
-  MODIFY `id_pengaturan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_pengaturan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_skema`

@@ -80,8 +80,8 @@
                         </div>
 
                         <div class="form-group">
-											  	<label class="col-md-3 control-label" for="exampleInputEmail1">Jenis Kelamin Pemohon:</label>
-                          <select class="form-control" id="jeniskelamin_asesi" name="jeniskelamin_asesi">
+											  	<label class="col-md-4 control-label" for="exampleInputEmail1">Jenis Kelamin Pemohon:</label>
+                          <select class="input-group col-md-8" id="jeniskelamin_asesi" name="jeniskelamin_asesi">
                             <option value="">Pilih</option>
                             <option value="Laki-Laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
@@ -89,8 +89,8 @@
 							         	</div>
 
                         <div class="form-group">
-                          <label class="col-md-3 control-label" for="exampleInputEmail1">Agama Pemohon:</label>
-                          <select class="form-control" id="agama_asesi" name="agama_asesi">
+                          <label class="col-md-4 control-label" for="exampleInputEmail1">Agama Pemohon:</label>
+                          <select class="input-group col-md-8" id="agama_asesi" name="agama_asesi">
                             <option value="">Pilih</option>
                             <option value="Islam">Islam</option>
                             <option value="Kristen">Kristen</option>
@@ -171,7 +171,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 col-form-label">Foto Asesi</label>
+                            <label class="col-sm-4 col-form-label">Foto Asesi</label>
                             <div class="input-group col-sm-8 col-md-8">
                              <input type="file" class="form-control" id="foto_asesi" name="foto_asesi" id="exampleInputUpload Foto1" placeholder="Upload Foto">
                             </div>

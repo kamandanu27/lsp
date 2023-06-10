@@ -76,7 +76,7 @@
 
                       <div class="form-group">
 												<label class="col-md-3 control-label" for="exampleInputEmail1">Jenis Kelamin Pemohon:</label>
-												<select class="form-control" id="jeniskelamin_asesor" name="jeniskelamin_asesor">
+												<select class="input-group col-sm-8 col-md-8" id="jeniskelamin_asesor" name="jeniskelamin_asesor">
 													<option value="">Pilih</option>
 													<option value="Laki-Laki">Laki-laki</option>
 													<option value="Perempuan">Perempuan</option>
@@ -85,7 +85,7 @@
 
                       <div class="form-group">
 												<label class="col-md-3 control-label" for="exampleInputEmail1">Agama Pemohon:</label>
-												<select class="form-control" id="agama_asesor" name="agama_asesor">
+												<select class="input-group col-sm-8 col-md-8" id="agama_asesor" name="agama_asesor">
 													<option value="">Pilih</option>
 													<option value="Islam">Islam</option>
 													<option value="Kristen">Kristen</option>
