@@ -29,28 +29,12 @@ class Pengaturan_model extends CI_Model {
 		return $query;
 	}
 
-	public function cekpengguna($where)
-	{
-		$this->db->select('*');
-		$this->db->from('tbl_pengaturan');
-		$this->db->where($where);
-		$query = $this->db->get();
-		return $query;
-	}
-
-
-	public function jumlah_pengguna()
-    {
-        $this->db->select('count(id) as j_pengguna');
-		$this->db->from('tbl_pengaturan');
-		$query = $this->db->get()->row();
-		return $query->j_pengguna;
-    }
 
 	public function detail($id)
 	{
 		$this->db->select('*');
 		$this->db->from('tbl_pengaturan');
+		$this->db->join('tbl_admin', 'tbl_pengaturan.id_admin = tbl_admin.id_admin');
 		$this->db->where('id_pengaturan', $id);
 		$query = $this->db->get();
 		return $query;

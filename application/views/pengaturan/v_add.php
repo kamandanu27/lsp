@@ -65,16 +65,17 @@
                             <input type="text" class="form-control" placeholder="Kontak" name="kontak" required>
                           </div>
                       </div>
-                    </div>
 
-                    <div class="form-group">
-									       <label for="exampleInputEmail1">Admin:</label>
-							        		<select class="form-control" id="id_admin" name="id_admin">
-							      		  	<option value="">Pilih</option>
-								  		      <?php foreach($list_admin as $row){ ?>
-										        	<option value="<?= $row->id_admin ?>"><?= $row->nama_admin ?></option>
-										        <?php } ?>
-								      	</select>
+                      <div class="form-group">
+									       <label class="col-md-3 control-label">Admin:</label>
+                         <div class="input-group col-sm-8 col-md-8">
+                            <select class="form-control" id="id_admin" name="id_admin">
+                                <option value="">Pilih</option>
+                                <?php foreach($list_admin as $row){ ?>
+                                  <option value="<?= $row->id_admin ?>"><?= $row->nama_admin ?></option>
+                                <?php } ?>
+                            </select>
+                          </div>
 							      	</div>
                     
                     <div class="form-group">

@@ -104,19 +104,20 @@ class Pengaturan extends CI_Controller {
 			redirect(base_url('pengaturan'),'refresh');
 		}else{
 
-				$this->form_validation->set_rules('id_pengaturan', 'ID pengaturan', 'required',
-				array( 'required'  => '%s harus diisi!'));
-
 				if($_FILES["struktur_organisasi"]['name'] == ""){ //jika tidak ada upload foto
 
 					$data = array(
-						'visi'     => $this->input->post('visi'),
+						'id_pengaturan'     => $this->input->post('id_pengaturan'),
+						'visi'     			=> $this->input->post('visi'),
 						'misi'   			=> $this->input->post('misi'),
 						'kontak'   			=> $this->input->post('kontak'),
 						'id_admin'   			=> $this->input->post('id_admin')
 						);
 
 						$q = $this->pengaturan->update($data);
+
+						$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
+						redirect(base_url('pengaturan'),'refresh');
 
 				}else{//jika ada upload foto
 
@@ -130,21 +131,19 @@ class Pengaturan extends CI_Controller {
 					$this->upload->do_upload('struktur_organisasi'); //upload foto produk
 
 						$data = array(
-							'visi'     => $this->input->post('visi'),
-							'misi'   			=> $this->input->post('misi'),
-							'struktur_organisasi'		=> $image,
-							'kontak'   			=> $this->input->post('kontak'),
+							'id_pengaturan'     	=> $this->input->post('id_pengaturan'),
+							'visi'     				=> $this->input->post('visi'),
+							'misi'   				=> $this->input->post('misi'),
+							'struktur_organisasi'	=> $image,
+							'kontak'   				=> $this->input->post('kontak'),
 							'id_admin'   			=> $this->input->post('id_admin')
 							
 						);
 						
 						$q = $this->pengaturan->update($data);
 			
-					$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
-					redirect(base_url('pengaturan'),'refresh');
-				
-					$this->session->set_flashdata('warning', '<i class="fa fa-check"></i> Peringatan! Data Tidak Lengkap');
-					redirect(base_url('pengaturan/edit/'.$this->input->post('id')),'refresh');
+						$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
+						redirect(base_url('pengaturan'),'refresh');
 				}
 
 		}

@@ -32,7 +32,7 @@ CREATE TABLE `tbl_admin` (
   `nama_admin` varchar(50) NOT NULL,
   `email_admin` varchar(50) NOT NULL,
   `password_admin` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Dumping data for table `tbl_admin`
@@ -55,7 +55,7 @@ CREATE TABLE `tbl_asesi` (
   `nik_asesi` varchar(50) NOT NULL,
   `nama_asesi` varchar(50) NOT NULL,
   `alamat_asesi` varchar(50) NOT NULL,
-  `notlp_asesi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `notlp_asesi` varchar(50) NOT NULL,
   `jeniskelamin_asesi` varchar(50) NOT NULL,
   `agama_asesi` varchar(50) NOT NULL,
   `tempatlahir_asesi` varchar(50) NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE `tbl_asesi` (
   `email_asesi` varchar(50) NOT NULL,
   `password_asesi` varchar(50) NOT NULL,
   `foto_asesi` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Dumping data for table `tbl_asesi`
@@ -105,7 +105,7 @@ CREATE TABLE `tbl_asesor` (
   `password_asesor` varchar(50) NOT NULL,
   `foto_asesor` date NOT NULL,
   `sertifikat_asesor` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Dumping data for table `tbl_asesor`
@@ -125,7 +125,7 @@ CREATE TABLE `tbl_event` (
   `nama_event` varchar(50) NOT NULL,
   `tanggal_event` date NOT NULL,
   `jam_event` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Dumping data for table `tbl_event`
@@ -145,10 +145,10 @@ CREATE TABLE `tbl_pengaturan` (
   `id_pengaturan` int NOT NULL,
   `visi` varchar(250) NOT NULL,
   `misi` varchar(250) NOT NULL,
-  `struktur_organisasi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `struktur_organisasi`varchar(250) NOT NULL,
   `kontak` varchar(20) NOT NULL,
   `id_admin` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Dumping data for table `tbl_pengaturan`
@@ -172,7 +172,7 @@ CREATE TABLE `tbl_skema` (
   `nama_skema` varchar(50) NOT NULL,
   `apl01` varchar(30) NOT NULL,
   `apl02` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 --
 -- Dumping data for table `tbl_skema`

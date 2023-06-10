@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 col-form-label">Struktur Organisasi</label>
+                            <label class="col-sm-4 col-form-label">Struktur Organisasi</label>
                             <div class="input-group col-sm-8 col-md-8">
                              <input type="file" class="form-control" id="struktur_organisasi" name="struktur_organisasi" id="exampleInputUpload Foto1" placeholder="Upload Foto">
                             </div>
@@ -73,13 +73,16 @@
                         </div>
 
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Admin</label>
-                          <select class="form-control" id="id_admin" name="id_admin">
-									            <option value="">Pilih</option>
-										          <?php foreach($list_admin as $row){ ?>
-									        		  <option value="<?= $row->id_admin ?>"><?= $row->nama_admin ?></option>
-									          	<?php } ?>
-								          	</select>
+                          <label class="col-sm-4 col-form-label">Admin</label>
+                          <div class="input-group col-md-8">
+                              <select class="form-control" id="id_admin" name="id_admin">
+                                <option value="<?= $data['id_admin'] ?>"><?= $data['nama_admin'] ?></option>
+                                <option value="">Pilih</option>
+                                <?php foreach($list_admin as $row){ ?>
+                                  <option value="<?= $row->id_admin ?>"><?= $row->nama_admin ?></option>
+                                <?php } ?>
+                              </select>
+                          </div>
 							        	</div>
 
                     </div>
