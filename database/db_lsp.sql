@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 10, 2023 at 06:49 AM
+-- Generation Time: Jun 10, 2023 at 07:13 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -122,6 +122,7 @@ INSERT INTO `tbl_asesor` (`id_asesor`, `noregister_asesor`, `nik_asesor`, `nama_
 
 CREATE TABLE `tbl_event` (
   `id_event` int NOT NULL,
+  `id_pendaftaran` int NOT NULL,
   `nama_event` varchar(50) NOT NULL,
   `tanggal_event` date NOT NULL,
   `jam_event` time NOT NULL
@@ -131,9 +132,11 @@ CREATE TABLE `tbl_event` (
 -- Dumping data for table `tbl_event`
 --
 
-INSERT INTO `tbl_event` (`id_event`, `nama_event`, `tanggal_event`, `jam_event`) VALUES
-(1, 'mjnuwq', '2023-06-09', '15:20:00'),
-(2, 'asdas', '2023-06-09', '17:23:00');
+INSERT INTO `tbl_event` (`id_event`, `id_pendaftaran`, `nama_event`, `tanggal_event`, `jam_event`) VALUES
+(1, 0, 'mjnuwq', '2023-06-09', '15:20:00'),
+(2, 0, 'asdas', '2023-06-09', '17:23:00'),
+(4, 2, 'mjnuwq', '2023-06-09', '16:13:00'),
+(5, 3, 'asdas', '2023-06-30', '19:17:00');
 
 -- --------------------------------------------------------
 
@@ -284,7 +287,7 @@ ALTER TABLE `tbl_asesor`
 -- AUTO_INCREMENT for table `tbl_event`
 --
 ALTER TABLE `tbl_event`
-  MODIFY `id_event` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_event` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_pendaftaran`

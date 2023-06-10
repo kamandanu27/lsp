@@ -14,11 +14,13 @@ class Event_model extends CI_Model {
 		if($where == null){
 			$this->db->select('*');
 			$this->db->from('tbl_event');
+			$this->db->join('tbl_pendaftaran', 'tbl_event.id_pendaftaran = tbl_pendaftaran.id_pendaftaran');
 			$this->db->order_by('tbl_event.id_event', 'Asc');
 			$query = $this->db->get();
 		}else{
 			$this->db->select('*');
 			$this->db->from('tbl_event');
+			$this->db->join('tbl_pendaftaran', 'tbl_event.id_pendaftaran = tbl_pendaftaran.id_pendaftaran');
 			$this->db->order_by('tbl_event.id_event', 'Asc');
 			$this->db->where($where);
 			$query = $this->db->get();
@@ -49,6 +51,7 @@ class Event_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('tbl_event');
+		$this->db->join('tbl_pendaftaran', 'tbl_event.id_pendaftaran = tbl_pendaftaran.id_pendaftaran');
 		$this->db->where('id_event', $id);
 		$query = $this->db->get();
 		return $query;

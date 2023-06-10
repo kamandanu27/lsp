@@ -43,6 +43,7 @@
                       <thead>
                           <tr>
                               <th style="width: 5%;text-align: center;">#</th>
+                              <th style="width: 15%;text-align: center;">No. Pendaftaran</th>
                               <th style="width: 15%;text-align: center;">Nama Event</th>
                               <th style="width: 15%;text-align: center;">Tanggal</th>
                               <th style="width: 13%;text-align: center;">Jam</th>
@@ -53,6 +54,7 @@
                           <?php $total= 0; $no=1; foreach($data as $row){  ?>
                           <tr>
                               <td><?= $no++ ?></td>
+                              <td><?= $row->no_pendaftaran ?></td>
                               <td><?= $row->nama_event ?></td>
                               <td><?= $row->tanggal_event ?></td>
                               <td><?= $row->jam_event ?></td>

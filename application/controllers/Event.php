@@ -7,6 +7,7 @@ class Event extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Event_model', 'event');
+		$this->load->model('Pendaftaran_model', 'pendaftaran');
 		$this->load->helper('tgl_indo');
 		$this->load->helper('security');
 	}
@@ -26,6 +27,7 @@ class Event extends CI_Controller {
 	public function add()
 	{
 		$data = array(
+			'list_pendaftaran' 	=> $this->pendaftaran->tabel()->result(),
 			'title'			=> 'LSP',
 			'judul'			=> 'Tambah Data Event',
 			'content'		=> 'event/v_add',
@@ -44,6 +46,7 @@ class Event extends CI_Controller {
 		}else{
 
 			$data = array(
+				'list_pendaftaran' 	=> $this->pendaftaran->tabel()->result(),
 				'title'			=> 'LSP',
 				'judul'			=> 'Edit Data Event',
 				'data' 			=> 	$this->event->detail($id)->row_array(),
@@ -65,6 +68,7 @@ class Event extends CI_Controller {
 		{
 
 			$data = array(
+				'id_pendaftaran'   			=> $this->input->post('id_pendaftaran'),
 				'nama_event'     => $this->input->post('nama_event'),
 				'tanggal_event'   			=> $this->input->post('tanggal_event'),
 				'jam_event'   		=> $this->input->post('jam_event')
@@ -99,6 +103,7 @@ class Event extends CI_Controller {
 				{
 					$data = array(
 						'id_event'		=> $this->input->post('id_event'),
+						'id_pendaftaran'   			=> $this->input->post('id_pendaftaran'),
 						'nama_event'     => $this->input->post('nama_event'),
 						'tanggal_event'   			=> $this->input->post('tanggal_event'),
 						'jam_event'   		=> $this->input->post('jam_event')

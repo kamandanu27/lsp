@@ -38,6 +38,19 @@
                 <form action="<?php echo base_url() ?>event/insert" method="post" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="row">
+
+                      <div class="form-group">
+									       <label class="col-md-3 control-label">No. Pendaftaran</label>
+                         <div class="input-group col-sm-8 col-md-8">
+                            <select class="form-control" id="id_pendaftaran" name="id_pendaftaran">
+                                <option value="">Pilih</option>
+                                <?php foreach($list_pendaftaran as $row){ ?>
+                                  <option value="<?= $row->id_pendaftaran ?>"><?= $row->no_pendaftaran ?></option>
+                                <?php } ?>
+                            </select>
+                          </div>
+							      	</div>
+
                       <div class="form-group">
                         <label class="col-md-3" for="nama_event">Nama Event</label>
                           <div class="input-group col-sm-8 col-md-8">
