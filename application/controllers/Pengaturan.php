@@ -88,7 +88,6 @@ class Pengaturan extends CI_Controller {
 
 			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat, Tambah Data Berhasil');
 			redirect(base_url('pengaturan'),'refresh');
-
 		}else{
 			$this->session->set_flashdata('error', '<i class="fa fa-close"></i> gagal, Data Tidak Lengkap');
 			redirect(base_url('pengaturan'),'refresh');
@@ -137,13 +136,11 @@ class Pengaturan extends CI_Controller {
 							'kontak'   			=> $this->input->post('kontak'),
 							'id_admin'   			=> $this->input->post('id_admin')
 							
-
 						);
 						
 						$q = $this->pengaturan->update($data);
 			
 					$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
-					$this->pengaturan->update($data);
 					redirect(base_url('pengaturan'),'refresh');
 				
 					$this->session->set_flashdata('warning', '<i class="fa fa-check"></i> Peringatan! Data Tidak Lengkap');

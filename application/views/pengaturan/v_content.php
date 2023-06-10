@@ -58,7 +58,7 @@
                               <td><?= $row->visi ?></td>
                               <td><?= $row->misi ?></td>
                               <td>
-									              <img src="<?= base_url()?>/public/image/upload/strukturorganisasi/<?= $row->struktur_organisasi ?>" style="width: 80px; height: 100px;">
+									              <img src="<?= base_url() ?>/public/image/upload/strukturorganisasi/<?= $row->struktur_organisasi ?>" style="width: 80px; height: 100px;">
 						            			</td>
                               <td><?= $row->kontak ?></td>
                               <td><?= $row->nama_admin ?></td>

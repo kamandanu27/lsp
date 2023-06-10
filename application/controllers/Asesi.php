@@ -85,6 +85,9 @@ class Asesi extends CI_Controller {
 				'tahunmasuk_asesi'   			=> $this->input->post('tahunmasuk_asesi'),
 				'tahunlulus_asesi'   			=> $this->input->post('tahunlulus_asesi'),
 				'jurusan_asesi'   			=> $this->input->post('jurusan_asesi'),
+				'programstudi_asesi'   			=> $this->input->post('programstudi_asesi'),
+				'email_asesi'   			=> $this->input->post('email_asesi'),
+				'password_asesi'   			=> $this->input->post('password_asesi'),
 				'foto_asesi'		=> $image
 			);
 
@@ -125,7 +128,10 @@ class Asesi extends CI_Controller {
 						'kotakab_asesi'   			=> $this->input->post('kotakab_asesi'),
 						'tahunmasuk_asesi'   			=> $this->input->post('tahunmasuk_asesi'),
 						'tahunlulus_asesi'   			=> $this->input->post('tahunlulus_asesi'),
-						'jurusan_asesi'   			=> $this->input->post('jurusan_asesi')
+						'jurusan_asesi'   			=> $this->input->post('jurusan_asesi'),
+						'programstudi_asesi'   			=> $this->input->post('programstudi_asesi'),
+						'email_asesi'   			=> $this->input->post('email_asesi'),
+						'password_asesi'   			=> $this->input->post('password_asesi')
 						);
 
 						$q = $this->asesi->update($data);
@@ -157,6 +163,9 @@ class Asesi extends CI_Controller {
 							'tahunmasuk_asesi'   			=> $this->input->post('tahunmasuk_asesi'),
 							'tahunlulus_asesi'   			=> $this->input->post('tahunlulus_asesi'),
 							'jurusan_asesi'   			=> $this->input->post('jurusan_asesi'),
+							'programstudi_asesi'   			=> $this->input->post('programstudi_asesi'),
+							'email_asesi'   			=> $this->input->post('email_asesi'),
+							'password_asesi'   			=> $this->input->post('password_asesi'),
 							'foto_asesi'		=> $image
 
 						);

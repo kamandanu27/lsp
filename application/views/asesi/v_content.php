@@ -48,7 +48,7 @@
                               <th style="width: 13%;text-align: center;">Nama</th>
                               <th style="width: 13%;text-align: center;">Alamat</th>
                               <th style="width: 13%;text-align: center;">No. Telp</th>
-                              <th style="width: 15%;text-align: center;">Jenis Kelamin</th>
+                              <th style="width: 13%;text-align: center;">Jenis Kelamin</th>
                               <th style="width: 13%;text-align: center;">Agama</th>
                               <th style="width: 13%;text-align: center;">Tempat Lahir</th>
                               <th style="width: 13%;text-align: center;">Tanggal Lahir</th>
@@ -56,11 +56,11 @@
                               <th style="width: 13%;text-align: center;">Kota Kabupaten</th>
                               <th style="width: 13%;text-align: center;">Tahun Masuk</th>
                               <th style="width: 13%;text-align: center;">Tahun Lulus</th>
-                              <th style="width: 15%;text-align: center;">Jurusan</th>
+                              <th style="width: 13%;text-align: center;">Jurusan</th>
                               <th style="width: 13%;text-align: center;">Program Studi</th>
                               <th style="width: 13%;text-align: center;">Email</th>
                               <th style="width: 13%;text-align: center;">Password</th>
-                              <th style="width: 15%;text-align: center;">Foto</th>
+                              <th style="width: 13%;text-align: center;">Foto</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
                       </thead>
