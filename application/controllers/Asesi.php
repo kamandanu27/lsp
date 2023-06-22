@@ -71,24 +71,24 @@ class Asesi extends CI_Controller {
 			$this->upload->do_upload('foto_asesi'); //upload foto produk
 
 			$data = array(
-				'nim_asesi'   			=> $this->input->post('nim_asesi'),
-				'nik_asesi'   			=> $this->input->post('nik_asesi'),
-				'nama_asesi'   			=> $this->input->post('nama_asesi'),
-				'alamat_asesi'   			=> $this->input->post('alamat_asesi'),
-				'notlp_asesi'   			=> $this->input->post('notlp_asesi'),
-				'jeniskelamin_asesi'     => $this->input->post('jeniskelamin_asesi'),
-				'agama_asesi'   			=> $this->input->post('agama_asesi'),
+				'nim_asesi'   					=> $this->input->post('nim_asesi'),
+				'nik_asesi'   					=> $this->input->post('nik_asesi'),
+				'nama_asesi'   					=> $this->input->post('nama_asesi'),
+				'alamat_asesi'   				=> $this->input->post('alamat_asesi'),
+				'notlp_asesi'   				=> $this->input->post('notlp_asesi'),
+				'jeniskelamin_asesi'     		=> $this->input->post('jeniskelamin_asesi'),
+				'agama_asesi'   				=> $this->input->post('agama_asesi'),
 				'tempatlahir_asesi'   			=> $this->input->post('tempatlahir_asesi'),
 				'tanggallahir_asesi'   			=> $this->input->post('tanggallahir_asesi'),
-				'provinsi_asesi'   			=> $this->input->post('provinsi_asesi'),
-				'kotakab_asesi'   			=> $this->input->post('kotakab_asesi'),
+				'provinsi_asesi'   				=> $this->input->post('provinsi_asesi'),
+				'kotakab_asesi'   				=> $this->input->post('kotakab_asesi'),
 				'tahunmasuk_asesi'   			=> $this->input->post('tahunmasuk_asesi'),
 				'tahunlulus_asesi'   			=> $this->input->post('tahunlulus_asesi'),
-				'jurusan_asesi'   			=> $this->input->post('jurusan_asesi'),
+				'jurusan_asesi'   				=> $this->input->post('jurusan_asesi'),
 				'programstudi_asesi'   			=> $this->input->post('programstudi_asesi'),
-				'email_asesi'   			=> $this->input->post('email_asesi'),
-				'password_asesi'   			=> $this->input->post('password_asesi'),
-				'foto_asesi'		=> $image
+				'email_asesi'   				=> $this->input->post('email_asesi'),
+				'password_asesi'   				=> $this->input->post('password_asesi'),
+				'foto_asesi'					=> $image
 			);
 
 			$q = $this->asesi->insert($data);
@@ -111,32 +111,7 @@ class Asesi extends CI_Controller {
 				$this->form_validation->set_rules('id_asesi', 'ID asesi', 'required',
 				array( 'required'  => '%s harus diisi!'));
 
-				if($_FILES["foto_asesi"]['name'] == ""){ //jika tidak ada upload foto
-
-					$data = array(
-						'id_asesi'				=> $this->input->post('id_asesi'),
-						'nim_asesi'   			=> $this->input->post('nim_asesi'),
-						'nik_asesi'   			=> $this->input->post('nik_asesi'),
-						'nama_asesi'   			=> $this->input->post('nama_asesi'),
-						'alamat_asesi'   			=> $this->input->post('alamat_asesi'),
-						'notlp_asesi'   			=> $this->input->post('notlp_asesi'),
-						'jeniskelamin_asesi'     => $this->input->post('jeniskelamin_asesi'),
-						'agama_asesi'   			=> $this->input->post('agama_asesi'),
-						'tempatlahir_asesi'   			=> $this->input->post('tempatlahir_asesi'),
-						'tanggallahir_asesi'   			=> $this->input->post('tanggallahir_asesi'),
-						'provinsi_asesi'   			=> $this->input->post('provinsi_asesi'),
-						'kotakab_asesi'   			=> $this->input->post('kotakab_asesi'),
-						'tahunmasuk_asesi'   			=> $this->input->post('tahunmasuk_asesi'),
-						'tahunlulus_asesi'   			=> $this->input->post('tahunlulus_asesi'),
-						'jurusan_asesi'   			=> $this->input->post('jurusan_asesi'),
-						'programstudi_asesi'   			=> $this->input->post('programstudi_asesi'),
-						'email_asesi'   			=> $this->input->post('email_asesi'),
-						'password_asesi'   			=> $this->input->post('password_asesi')
-						);
-
-						$q = $this->asesi->update($data);
-
-				}else{//jika ada upload foto
+				if($_FILES["foto_asesi"]['name'] !== ""){ //jika tidak ada upload foto
 
 					$image 								= time().'-'.$_FILES["foto_asesi"]['name']; //data post dari form
 					$config['upload_path'] 				= './public/image/upload/asesi/'; //lokasi folder foto produk
@@ -149,33 +124,38 @@ class Asesi extends CI_Controller {
 
 						$data = array(
 							'id_asesi'				=> $this->input->post('id_asesi'),
-							'nim_asesi'   			=> $this->input->post('nim_asesi'),
-							'nik_asesi'   			=> $this->input->post('nik_asesi'),
-							'nama_asesi'   			=> $this->input->post('nama_asesi'),
-							'alamat_asesi'   			=> $this->input->post('alamat_asesi'),
-							'notlp_asesi'   			=> $this->input->post('notlp_asesi'),
-							'jeniskelamin_asesi'     => $this->input->post('jeniskelamin_asesi'),
-							'agama_asesi'   			=> $this->input->post('agama_asesi'),
-							'tempatlahir_asesi'   			=> $this->input->post('tempatlahir_asesi'),
-							'tanggallahir_asesi'   			=> $this->input->post('tanggallahir_asesi'),
-							'provinsi_asesi'   			=> $this->input->post('provinsi_asesi'),
-							'kotakab_asesi'   			=> $this->input->post('kotakab_asesi'),
-							'tahunmasuk_asesi'   			=> $this->input->post('tahunmasuk_asesi'),
-							'tahunlulus_asesi'   			=> $this->input->post('tahunlulus_asesi'),
-							'jurusan_asesi'   			=> $this->input->post('jurusan_asesi'),
-							'programstudi_asesi'   			=> $this->input->post('programstudi_asesi'),
-							'email_asesi'   			=> $this->input->post('email_asesi'),
-							'password_asesi'   			=> $this->input->post('password_asesi'),
 							'foto_asesi'		=> $image
 
 						);
 						
 						$q = $this->asesi->update($data);
 			
-					$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
-					$this->asesi->update($data);
-					redirect(base_url('asesi'),'refresh');
 				}
+
+				$data = array(
+					'id_asesi'						=> $this->input->post('id_asesi'),
+					'nim_asesi'   					=> $this->input->post('nim_asesi'),
+					'nik_asesi'   					=> $this->input->post('nik_asesi'),
+					'nama_asesi'   					=> $this->input->post('nama_asesi'),
+					'alamat_asesi'   				=> $this->input->post('alamat_asesi'),
+					'notlp_asesi'   				=> $this->input->post('notlp_asesi'),
+					'jeniskelamin_asesi'     		=> $this->input->post('jeniskelamin_asesi'),
+					'agama_asesi'   				=> $this->input->post('agama_asesi'),
+					'tempatlahir_asesi'   			=> $this->input->post('tempatlahir_asesi'),
+					'tanggallahir_asesi'   			=> $this->input->post('tanggallahir_asesi'),
+					'provinsi_asesi'   				=> $this->input->post('provinsi_asesi'),
+					'kotakab_asesi'   				=> $this->input->post('kotakab_asesi'),
+					'tahunmasuk_asesi'   			=> $this->input->post('tahunmasuk_asesi'),
+					'tahunlulus_asesi'   			=> $this->input->post('tahunlulus_asesi'),
+					'jurusan_asesi'   				=> $this->input->post('jurusan_asesi'),
+					'programstudi_asesi'   			=> $this->input->post('programstudi_asesi'),
+					'email_asesi'   				=> $this->input->post('email_asesi'),
+					'password_asesi'   				=> $this->input->post('password_asesi')
+				);
+
+				$this->asesi->update($data);
+				$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
+				redirect(base_url('asesi'),'refresh');
 			}
 	}
 

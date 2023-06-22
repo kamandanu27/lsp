@@ -44,9 +44,10 @@
                     <div class="row">
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">No. Pendaftaran</label>
+                            <label class="col-md-3 control-label">No. Pendaftaran</label>
                             <div class="input-group col-sm-8 col-md-8">
                                 <select class="form-control" id="id_pendaftaran" name="id_pendaftaran">
+                                    <option value="<?= $data['id_pendaftaran'] ?>"><?= $data['no_pendaftaran'] ?></option>
                                     <option value="">Pilih</option>
                                     <?php foreach($list_pendaftaran as $row){ ?>
                                       <option value="<?= $row->id_pendaftaran ?>"><?= $row->no_pendaftaran ?></option>
@@ -56,7 +57,7 @@
 							        	</div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_event">Nama Event</label>
+                          <label class="col-md-3 control-label" for="nama_event">Nama Event</label>
                           <div class="input-group col-md-8">
                               <input class="form-control" type="hidden" id="id_event" name="id_event" value="<?= $data['id_event'] ?>" required>
                               <input type="text" class="form-control" placeholder="Nama Event" name="nama_event" value="<?= $data['nama_event'] ?>" required>
@@ -65,14 +66,14 @@
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="tanggal_event">Tanggal</label>
+                          <label class="col-md-3 control-label" for="tanggal_event">Tanggal</label>
                           <div class="input-group col-md-8">
                               <input type="date" class="form-control" placeholder="Tanggal" name="tanggal_event" value="<?= $data['tanggal_event'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="jam_event">Jam</label>
+                          <label class="col-md-3 control-label" for="jam_event">Jam</label>
                           <div class="input-group col-md-8">
                               <input type="time" class="form-control" placeholder="Jam" name="jam_event" value="<?= $data['jam_event'] ?>" required>
                           </div>
@@ -84,7 +85,7 @@
 
                     <div class="form-group">
                       <div class="row">
-                        <label class="col-md-4 control-label" for="name"></label>
+                        <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Update</button>
                           <a href="<?= base_url() ?>event" class="btn btn-danger">Batal</a>

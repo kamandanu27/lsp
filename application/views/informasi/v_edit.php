@@ -38,33 +38,32 @@
                 
 
                 <!-- form start -->
-                <form action="<?php echo base_url() ?>admin/update" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() ?>informasi/update" method="post" enctype="multipart/form-data">
                   <div class="box-body">
 
                     <div class="row">
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_admin">Nama Admin</label>
+                          <label class="col-md-4 control-label" for="ttl">Judul Informasi</label>
                           <div class="input-group col-md-8">
-                              <input class="form-control" type="hidden" id="id_admin" name="id_admin" value="<?= $data['id_admin'] ?>" required>
-                              <input type="text" class="form-control" placeholder="Nama Admin" name="nama_admin" value="<?= $data['nama_admin'] ?>" required>
+                              <input class="form-control" type="hidden" id="id_informasi" name="id_informasi" value="<?= $data['id_informasi'] ?>" required>
+                              <input type="text" class="form-control" placeholder="Judul Informasi" name="judul_informasi" value="<?= $data['judul_informasi'] ?>" required>
                               <input type="hidden" name="<?=$this->security->get_csrf_token_name(); ?>" value="<?=$this->security->get_csrf_hash(); ?>" style="display: none">
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="email_admin">Email</label>
-                          <div class="input-group col-md-8">
-                              <input type="email" class="form-control" placeholder="Email" name="email_admin" value="<?= $data['email_admin'] ?>" required>
-                          </div>
-                        </div>
+                            <label class="col-sm-4 col-form-label">Foto Informasi</label>
+                            <div class="input-group col-sm-8 col-md-8">
+                             <input type="file" class="form-control" id="foto_informasi" name="foto_informasi" id="exampleInputUpload Foto1" placeholder="Upload Foto">
+                            </div>
+                       </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="password_admin">Password</label>
+                          <label class="col-md-4 control-label" for="ttl">Isi Informasi</label>
                           <div class="input-group col-md-8">
-                              <input type="password" class="form-control" placeholder="Password" name="password_admin" value="<?= $data['password_admin'] ?>" required>
+                              <input type="text" class="form-control" placeholder="Isi Informasi" name="isi_informasi" value="<?= $data['isi_informasi'] ?>" required>
                           </div>
                         </div>
-
                     </div>
 
 

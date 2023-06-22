@@ -43,7 +43,7 @@
 
                     <div class="row">
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="no_pendaftaran">No. Pendaftaran</label>
+                          <label class="col-md-3 control-label" for="no_pendaftaran">No. Pendaftaran</label>
                           <div class="input-group col-md-8">
                               <input class="form-control" type="hidden" id="id_pendaftaran" name="id_pendaftaran" value="<?= $data['id_pendaftaran'] ?>" required>
                               <input type="text" class="form-control" placeholder="No. Pendaftaran" name="no_pendaftaran" value="<?= $data['no_pendaftaran'] ?>" required>
@@ -52,16 +52,17 @@
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="tgl_pendaftaran">Tanggal</label>
+                          <label class="col-md-3 control-label" for="tgl_pendaftaran">Tanggal</label>
                           <div class="input-group col-md-8">
                               <input type="date" class="form-control" placeholder="Tanggal Pendaftaran" name="tgl_pendaftaran" value="<?= $data['tgl_pendaftaran'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-									       <label class="col-md-4 control-label">Asesi</label>
+									       <label class="col-md-3 control-label">Asesi</label>
                          <div class="input-group col-sm-8 col-md-8">
                             <select class="form-control" id="id_asesi" name="id_asesi">
+                                <option value="<?= $data['id_asesi'] ?>"><?= $data['nama_asesi'] ?></option>
                                 <option value="">Pilih</option>
                                 <?php foreach($list_asesi as $row){ ?>
                                   <option value="<?= $row->id_asesi ?>"><?= $row->nama_asesi ?></option>
@@ -71,9 +72,10 @@
 							      	</div>
 
                       <div class="form-group">
-									       <label class="col-md-4 control-label">Asesor</label>
+									       <label class="col-md-3 control-label">Asesor</label>
                          <div class="input-group col-sm-8 col-md-8">
                             <select class="form-control" id="id_asesor" name="id_asesor">
+                                <option value="<?= $data['id_asesor'] ?>"><?= $data['nama_asesor'] ?></option>
                                 <option value="">Pilih</option>
                                 <?php foreach($list_asesor as $row){ ?>
                                   <option value="<?= $row->id_asesor ?>"><?= $row->nama_asesor ?></option>
@@ -83,9 +85,10 @@
 							      	</div>
 
                       <div class="form-group">
-									       <label class="col-md-4 control-label">Skema</label>
+									       <label class="col-md-3 control-label">Skema</label>
                          <div class="input-group col-sm-8 col-md-8">
                             <select class="form-control" id="id_skema" name="id_skema">
+                                <option value="<?= $data['id_skema'] ?>"><?= $data['nama_skema'] ?></option>
                                 <option value="">Pilih</option>
                                 <?php foreach($list_skema as $row){ ?>
                                   <option value="<?= $row->id_skema ?>"><?= $row->nama_skema ?></option>
@@ -95,9 +98,10 @@
 							      	</div>
 
                       <div class="form-group">
-									       <label class="col-md-4 control-label">apl01</label>
+									       <label class="col-md-3 control-label">apl01</label>
                          <div class="input-group col-sm-8 col-md-8">
                             <select class="form-control" id="id_skema" name="id_skema">
+                                <option value="<?= $data['id_skema'] ?>"><?= $data['apl01'] ?></option>
                                 <option value="">Pilih</option>
                                 <?php foreach($list_skema as $row){ ?>
                                   <option value="<?= $row->id_skema ?>"><?= $row->apl01 ?></option>
@@ -107,9 +111,10 @@
 							      	</div>
 
                       <div class="form-group">
-									       <label class="col-md-4 control-label">apl02</label>
+									       <label class="col-md-3 control-label">apl02</label>
                          <div class="input-group col-sm-8 col-md-8">
                             <select class="form-control" id="id_skema" name="id_skema">
+                                <option value="<?= $data['id_skema'] ?>"><?= $data['apl02'] ?></option>
                                 <option value="">Pilih</option>
                                 <?php foreach($list_skema as $row){ ?>
                                   <option value="<?= $row->id_skema ?>"><?= $row->apl02 ?></option>
@@ -119,14 +124,14 @@
 							      	</div>
 
                       <div class="form-group">
-                        <label class="col-md-4 control-label" for="sertifikat">Sertifikat</label>
+                        <label class="col-md-3 control-label" for="sertifikat">Sertifikat</label>
                         <div class="input-group col-md-8">
                              <input type="text" class="form-control" placeholder="Sertifikat Pendaftaran" name="sertifikat" value="<?= $data['sertifikat'] ?>" required>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="col-md-4 control-label" for="status_pendaftaran">Status</label>
+                        <label class="col-md-3 control-label" for="status_pendaftaran">Status</label>
                          <div class="input-group col-md-8">
                              <input type="text" class="form-control" placeholder="Status Pendaftaran" name="status_pendaftaran" value="<?= $data['status_pendaftaran'] ?>" required>
                          </div>
@@ -138,7 +143,7 @@
 
                     <div class="form-group">
                       <div class="row">
-                        <label class="col-md-4 control-label" for="name"></label>
+                        <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Update</button>
                           <a href="<?= base_url() ?>pendaftaran" class="btn btn-danger">Batal</a>

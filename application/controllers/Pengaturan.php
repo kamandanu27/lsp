@@ -77,11 +77,11 @@ class Pengaturan extends CI_Controller {
 			$this->upload->do_upload('struktur_organisasi'); //upload foto produk
 
 			$data = array(
-				'visi'     => $this->input->post('visi'),
-				'misi'   			=> $this->input->post('misi'),
+				'visi'     					=> $this->input->post('visi'),
+				'misi'   					=> $this->input->post('misi'),
 				'struktur_organisasi'		=> $image,
-				'kontak'   			=> $this->input->post('kontak'),
-				'id_admin'   			=> $this->input->post('id_admin')
+				'kontak'   					=> $this->input->post('kontak'),
+				'id_admin'   				=> $this->input->post('id_admin')
 			);
 
 			$q = $this->pengaturan->insert($data);
@@ -107,10 +107,10 @@ class Pengaturan extends CI_Controller {
 				if($_FILES["struktur_organisasi"]['name'] == ""){ //jika tidak ada upload foto
 
 					$data = array(
-						'id_pengaturan'     => $this->input->post('id_pengaturan'),
-						'visi'     			=> $this->input->post('visi'),
-						'misi'   			=> $this->input->post('misi'),
-						'kontak'   			=> $this->input->post('kontak'),
+						'id_pengaturan'   		=> $this->input->post('id_pengaturan'),
+						'visi'     				=> $this->input->post('visi'),
+						'misi'   				=> $this->input->post('misi'),
+						'kontak'   				=> $this->input->post('kontak'),
 						'id_admin'   			=> $this->input->post('id_admin')
 						);
 

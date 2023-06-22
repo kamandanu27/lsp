@@ -43,7 +43,7 @@
 
                     <div class="row">
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="ttl">Visi</label>
+                          <label class="col-md-3 control-label" for="ttl">Visi</label>
                           <div class="input-group col-md-8">
                               <input class="form-control" type="hidden" id="id_pengaturan" name="id_pengaturan" value="<?= $data['id_pengaturan'] ?>" required>
                               <input type="text" class="form-control" placeholder="Visi" name="visi" value="<?= $data['visi'] ?>" required>
@@ -52,28 +52,28 @@
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="ttl">Misi</label>
+                          <label class="col-md-3 control-label" for="ttl">Misi</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="Misi" name="misi" value="<?= $data['misi'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-4 col-form-label">Struktur Organisasi</label>
+                            <label class="col-sm-3 col-form-label">Struktur Organisasi</label>
                             <div class="input-group col-sm-8 col-md-8">
                              <input type="file" class="form-control" id="struktur_organisasi" name="struktur_organisasi" id="exampleInputUpload Foto1" placeholder="Upload Foto">
                             </div>
                        </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="ttl">Kontak</label>
+                          <label class="col-md-3 control-label" for="ttl">Kontak</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="Kontak" name="kontak" value="<?= $data['kontak'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-sm-4 col-form-label">Admin</label>
+                          <label class="col-sm-3 col-form-label">Admin</label>
                           <div class="input-group col-md-8">
                               <select class="form-control" id="id_admin" name="id_admin">
                                 <option value="<?= $data['id_admin'] ?>"><?= $data['nama_admin'] ?></option>
@@ -91,7 +91,7 @@
 
                     <div class="form-group">
                       <div class="row">
-                        <label class="col-md-4 control-label" for="name"></label>
+                        <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Update</button>
                           <a href="<?= base_url() ?>admin" class="btn btn-danger">Batal</a>

@@ -43,7 +43,7 @@
 
                     <div class="row">
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="kode_skema">Kode</label>
+                          <label class="col-md-3 control-label" for="kode_skema">Kode</label>
                           <div class="input-group col-md-8">
                               <input class="form-control" type="hidden" id="id_skema" name="id_skema" value="<?= $data['id_skema'] ?>" required>
                               <input type="text" class="form-control" placeholder="Kode Skema" name="kode_skema" value="<?= $data['kode_skema'] ?>" required>
@@ -52,21 +52,21 @@
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_skema">Nama</label>
+                          <label class="col-md-3 control-label" for="nama_skema">Nama</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="Nama Skema" name="nama_skema" value="<?= $data['nama_skema'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="apl01">apl01</label>
+                          <label class="col-md-3 control-label" for="apl01">apl01</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="apl01" name="apl01" value="<?= $data['apl01'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="apl02">apl02</label>
+                          <label class="col-md-3 control-label" for="apl02">apl02</label>
                           <div class="input-group col-md-8">
                               <input type="text" class="form-control" placeholder="apl02" name="apl02" value="<?= $data['apl02'] ?>" required>
                           </div>
@@ -78,7 +78,7 @@
 
                     <div class="form-group">
                       <div class="row">
-                        <label class="col-md-4 control-label" for="name"></label>
+                        <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Update</button>
                           <a href="<?= base_url() ?>skema" class="btn btn-danger">Batal</a>

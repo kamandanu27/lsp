@@ -28,10 +28,10 @@ class Event extends CI_Controller {
 	{
 		$data = array(
 			'list_pendaftaran' 	=> $this->pendaftaran->tabel()->result(),
-			'title'			=> 'LSP',
-			'judul'			=> 'Tambah Data Event',
-			'content'		=> 'event/v_add',
-			'ajax'	 		=> 'event/v_ajax'
+			'title'				=> 'LSP',
+			'judul'				=> 'Tambah Data Event',
+			'content'			=> 'event/v_add',
+			'ajax'	 			=> 'event/v_ajax'
 		);
 		$this->load->view('layout/v_wrapper', $data, FALSE);
 	}
@@ -47,11 +47,11 @@ class Event extends CI_Controller {
 
 			$data = array(
 				'list_pendaftaran' 	=> $this->pendaftaran->tabel()->result(),
-				'title'			=> 'LSP',
-				'judul'			=> 'Edit Data Event',
-				'data' 			=> 	$this->event->detail($id)->row_array(),
-				'content'		=> 'event/v_edit',
-				'ajax'	 		=> 'event/v_ajax'
+				'title'				=> 'LSP',
+				'judul'				=> 'Edit Data Event',
+				'data' 				=> 	$this->event->detail($id)->row_array(),
+				'content'			=> 'event/v_edit',
+				'ajax'	 			=> 'event/v_ajax'
 			);
 			$this->load->view('layout/v_wrapper', $data, FALSE);
 		}
@@ -68,10 +68,9 @@ class Event extends CI_Controller {
 		{
 
 			$data = array(
-				'id_pendaftaran'   			=> $this->input->post('id_pendaftaran'),
-				'nama_event'     => $this->input->post('nama_event'),
+				'nama_event'     			=> $this->input->post('nama_event'),
 				'tanggal_event'   			=> $this->input->post('tanggal_event'),
-				'jam_event'   		=> $this->input->post('jam_event')
+				'jam_event'   				=> $this->input->post('jam_event')
 			);
 
 			$q = $this->event->insert($data);
@@ -102,11 +101,11 @@ class Event extends CI_Controller {
 				if ($this->form_validation->run()) 
 				{
 					$data = array(
-						'id_event'		=> $this->input->post('id_event'),
+						'id_event'					=> $this->input->post('id_event'),
 						'id_pendaftaran'   			=> $this->input->post('id_pendaftaran'),
-						'nama_event'     => $this->input->post('nama_event'),
+						'nama_event'     			=> $this->input->post('nama_event'),
 						'tanggal_event'   			=> $this->input->post('tanggal_event'),
-						'jam_event'   		=> $this->input->post('jam_event')
+						'jam_event'   				=> $this->input->post('jam_event')
 					);
 					$this->event->update($data);
 			

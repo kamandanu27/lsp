@@ -38,30 +38,37 @@
                 
 
                 <!-- form start -->
-                <form action="<?php echo base_url() ?>admin/update" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() ?>tuk/update" method="post" enctype="multipart/form-data">
                   <div class="box-body">
 
                     <div class="row">
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_admin">Nama Admin</label>
+                          <label class="col-md-3 control-label" for="kode_tuk">Kode</label>
                           <div class="input-group col-md-8">
-                              <input class="form-control" type="hidden" id="id_admin" name="id_admin" value="<?= $data['id_admin'] ?>" required>
-                              <input type="text" class="form-control" placeholder="Nama Admin" name="nama_admin" value="<?= $data['nama_admin'] ?>" required>
+                              <input class="form-control" type="hidden" id="id_tuk" name="id_tuk" value="<?= $data['id_tuk'] ?>" required>
+                              <input type="text" class="form-control" placeholder="Kode" name="kode_tuk" value="<?= $data['kode_tuk'] ?>" required>
                               <input type="hidden" name="<?=$this->security->get_csrf_token_name(); ?>" value="<?=$this->security->get_csrf_hash(); ?>" style="display: none">
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="email_admin">Email</label>
+                          <label class="col-md-3 control-label" for="jenis_tuk">Jenis Tuk</label>
                           <div class="input-group col-md-8">
-                              <input type="email" class="form-control" placeholder="Email" name="email_admin" value="<?= $data['email_admin'] ?>" required>
+                              <input type="text" class="form-control" placeholder="Jenis Tuk" name="jenis_tuk" value="<?= $data['jenis_tuk'] ?>" required>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="password_admin">Password</label>
+                          <label class="col-md-3 control-label" for="nama_tuk">Nama Tuk</label>
                           <div class="input-group col-md-8">
-                              <input type="password" class="form-control" placeholder="Password" name="password_admin" value="<?= $data['password_admin'] ?>" required>
+                              <input type="text" class="form-control" placeholder="nNama Tuk" name="nama_tuk" value="<?= $data['nama_tuk'] ?>" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="alamat_tuk">Alamat</label>
+                          <div class="input-group col-md-8">
+                              <input type="text" class="form-control" placeholder="Alamat" name="alamat_tuk" value="<?= $data['alamat_tuk'] ?>" required>
                           </div>
                         </div>
 
@@ -71,10 +78,10 @@
 
                     <div class="form-group">
                       <div class="row">
-                        <label class="col-md-4 control-label" for="name"></label>
+                        <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
                           <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Update</button>
-                          <a href="<?= base_url() ?>admin" class="btn btn-danger">Batal</a>
+                          <a href="<?= base_url() ?>tuk" class="btn btn-danger">Batal</a>
                         </div>
                       </div>
                     </div>

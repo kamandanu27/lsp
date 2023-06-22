@@ -75,25 +75,29 @@
                       </div>
 
                       <div class="form-group">
-												<label class="col-md-3 control-label" for="exampleInputEmail1">Jenis Kelamin Pemohon:</label>
-												<select class="input-group col-sm-8 col-md-8" id="jeniskelamin_asesor" name="jeniskelamin_asesor">
-													<option value="">Pilih</option>
-													<option value="Laki-Laki">Laki-laki</option>
-													<option value="Perempuan">Perempuan</option>
-												</select>
-							      	</div>
+											  	<label class="col-md-3 control-label" for="exampleInputEmail1">Jenis Kelamin Pemohon</label>
+                          <div class="input-group col-md-8">
+                              <select class="form-control" id="jeniskelamin_asesor" name="jeniskelamin_asesor">
+                                <option value="">Pilih</option>
+                                <option value="Laki-Laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                              </select>
+                          </div>  
+							        </div>
 
                       <div class="form-group">
-												<label class="col-md-3 control-label" for="exampleInputEmail1">Agama Pemohon:</label>
-												<select class="input-group col-sm-8 col-md-8" id="agama_asesor" name="agama_asesor">
-													<option value="">Pilih</option>
-													<option value="Islam">Islam</option>
-													<option value="Kristen">Kristen</option>
-                          <option value="Katholik">Katholik</option>
-                          <option value="Hindu">Hindu</option>
-                          <option value="Budha">Budha</option>
-												</select>
-							      	</div>
+                          <label class="col-md-3 control-label" for="exampleInputEmail1">Agama Pemohon</label>
+                          <div class="input-group col-md-8">
+                              <select class="form-control" id="agama_asesor" name="agama_asesor">
+                                <option value="">Pilih</option>
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Katholik">Katholik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Budha">Budha</option>
+                              </select>
+                          </div>
+							        </div>
 
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Tempat Lahir</label>

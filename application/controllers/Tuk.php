@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+class Tuk extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Admin_model', 'admin');
+		$this->load->model('Tuk_model', 'tuk');
 		$this->load->helper('tgl_indo');
 		$this->load->helper('security');
 	}
@@ -15,10 +15,10 @@ class Admin extends CI_Controller {
 	{
 		$data = array(
 			'title'			=> 'LSP',
-			'judul'			=> 'Data Admin',
-			'data' 			=> $this->admin->tabel()->result(),
-			'content'		=> 'admin/v_content',
-			'ajax'	 		=> 'admin/v_ajax'
+			'judul'			=> 'Data Tuk',
+			'data' 			=> $this->tuk->tabel()->result(),
+			'content'		=> 'tuk/v_content',
+			'ajax'	 		=> 'tuk/v_ajax'
 		);
 		$this->load->view('layout/v_wrapper', $data, FALSE);
 	}
@@ -27,9 +27,9 @@ class Admin extends CI_Controller {
 	{
 		$data = array(
 			'title'			=> 'LSP',
-			'judul'			=> 'Tambah Data Admin',
-			'content'		=> 'admin/v_add',
-			'ajax'	 		=> 'admin/v_ajax'
+			'judul'			=> 'Tambah Data Tuk',
+			'content'		=> 'tuk/v_add',
+			'ajax'	 		=> 'tuk/v_ajax'
 		);
 		$this->load->view('layout/v_wrapper', $data, FALSE);
 	}
@@ -37,18 +37,18 @@ class Admin extends CI_Controller {
 
 	public function edit($id)
 	{
-		$cek = $this->admin->detail($id)->row_array();
+		$cek = $this->tuk->detail($id)->row_array();
 		if($cek == null){
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data tidak ditemukan');
-			redirect(base_url('admin'),'refresh');
+			redirect(base_url('tuk'),'refresh');
 		}else{
 
 			$data = array(
 				'title'			=> 'LSP',
-				'judul'			=> 'Edit Data Admin',
-				'data' 			=> 	$this->admin->detail($id)->row_array(),
-				'content'		=> 'admin/v_edit',
-				'ajax'	 		=> 'admin/v_ajax'
+				'judul'			=> 'Edit Data Tuk',
+				'data' 			=> 	$this->tuk->detail($id)->row_array(),
+				'content'		=> 'tuk/v_edit',
+				'ajax'	 		=> 'tuk/v_ajax'
 			);
 			$this->load->view('layout/v_wrapper', $data, FALSE);
 		}
@@ -58,27 +58,28 @@ class Admin extends CI_Controller {
 
 	public function insert()
 	{
-		$this->form_validation->set_rules('nama_admin', 'Nama admin', 'required',
+		$this->form_validation->set_rules('kode_tuk', 'Kode tuk', 'required',
 		array( 'required'  => '%s harus diisi!'));
 
 		if ($this->form_validation->run()) 
 		{
 
 			$data = array(
-				'nama_admin'     			=> $this->input->post('nama_admin'),
-				'email_admin'   			=> $this->input->post('email_admin'),
-				'password_admin'   			=> $this->input->post('password_admin')
+				'kode_tuk'     			=> $this->input->post('kode_tuk'),
+				'jenis_tuk'     		=> $this->input->post('jenis_tuk'),
+				'nama_tuk'    			=> $this->input->post('nama_tuk'),
+				'alamat_tuk'   			=> $this->input->post('alamat_tuk')
 			);
 
-			$q = $this->admin->insert($data);
+			$q = $this->tuk->insert($data);
 
 			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat, Tambah data berhasil');
-			redirect(base_url('admin'),'refresh');
+			redirect(base_url('tuk'),'refresh');
 
 		}else{
 			
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data belum lengkap');
-			redirect(base_url('admin/add'),'refresh');
+			redirect(base_url('tuk/add'),'refresh');
 		}
 
 		
@@ -86,30 +87,31 @@ class Admin extends CI_Controller {
 
 	public function update()
 	{
-		$cek = $this->admin->detail($this->input->post('id_admin'))->row_array();
+		$cek = $this->tuk->detail($this->input->post('id_tuk'))->row_array();
 		if($cek == null){
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
-			redirect(base_url('admin'),'refresh');
+			redirect(base_url('tuk'),'refresh');
 		}else{
 
-				$this->form_validation->set_rules('id_admin', 'ID admin', 'required',
+				$this->form_validation->set_rules('id_tuk', 'ID tuk', 'required',
 				array( 'required'  => '%s harus diisi!'));
 
 				if ($this->form_validation->run()) 
 				{
 					$data = array(
-						'id_admin'					=> $this->input->post('id_admin'),
-						'nama_admin'     			=> $this->input->post('nama_admin'),
-						'email_admin'   			=> $this->input->post('email_admin'),
-						'password_admin'   			=> $this->input->post('password_admin')
+						'id_tuk'				=> $this->input->post('id_tuk'),
+						'kode_tuk'    			=> $this->input->post('kode_tuk'),
+						'jenis_tuk'    			=> $this->input->post('jenis_tuk'),
+						'nama_tuk'     			=> $this->input->post('nama_tuk'),
+						'alamat_tuk'   			=> $this->input->post('alamat_tuk')
 					);
-					$this->admin->update($data);
+					$this->tuk->update($data);
 			
 					$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
-					redirect(base_url('admin'),'refresh');
+					redirect(base_url('tuk'),'refresh');
 				}else{
 					$this->session->set_flashdata('warning', '<i class="fa fa-check"></i> Peringatan! Data Belum Lengkap');
-					redirect(base_url('admin/edit/'.$this->input->post('id')),'refresh');
+					redirect(base_url('tuk/edit/'.$this->input->post('id')),'refresh');
 				}
 
 		}
@@ -120,20 +122,20 @@ class Admin extends CI_Controller {
 
 	public function delete($id)
 	{
-		$cek = $this->admin->detail($id)->row_array();
+		$cek = $this->tuk->detail($id)->row_array();
 		if($cek == null){
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
-			redirect(base_url('admin'),'refresh');
+			redirect(base_url('tuk'),'refresh');
 		}else{
 
 			$data = array(
-				'id_admin'	=> $id
+				'id_tuk'	=> $id
 			);
 			
-			$this->admin->delete($data);
+			$this->tuk->delete($data);
 			
 			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dihapus');
-			redirect(base_url('admin'),'refresh');
+			redirect(base_url('tuk'),'refresh');
 		}
 		
 
@@ -142,4 +144,4 @@ class Admin extends CI_Controller {
 }
 
 /* End of file Guru.php */
-/* Location: ./application/controllers/admin/Guru.php */
+/* Location: ./application/controllers/tuk/Guru.php */

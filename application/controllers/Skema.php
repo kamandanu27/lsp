@@ -65,10 +65,10 @@ class Skema extends CI_Controller {
 		{
 
 			$data = array(
-				'kode_skema'     => $this->input->post('kode_skema'),
-				'nama_skema'     => $this->input->post('nama_skema'),
+				'kode_skema'    	=> $this->input->post('kode_skema'),
+				'nama_skema'     	=> $this->input->post('nama_skema'),
 				'apl01'   			=> $this->input->post('apl01'),
-				'apl02'   		=> $this->input->post('apl02')
+				'apl02'   			=> $this->input->post('apl02')
 			);
 
 			$q = $this->skema->insert($data);
@@ -99,11 +99,11 @@ class Skema extends CI_Controller {
 				if ($this->form_validation->run()) 
 				{
 					$data = array(
-						'id_skema'		=> $this->input->post('id_skema'),
-						'kode_skema'     => $this->input->post('kode_skema'),
-						'nama_skema'     => $this->input->post('nama_skema'),
+						'id_skema'			=> $this->input->post('id_skema'),
+						'kode_skema'    	=> $this->input->post('kode_skema'),
+						'nama_skema'     	=> $this->input->post('nama_skema'),
 						'apl01'   			=> $this->input->post('apl01'),
-						'apl02'   		=> $this->input->post('apl02')
+						'apl02'   			=> $this->input->post('apl02')
 					);
 					$this->skema->update($data);
 			

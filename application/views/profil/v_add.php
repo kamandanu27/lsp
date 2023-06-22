@@ -34,52 +34,49 @@
 
                 ?>
                 </div><!-- /.box-header -->
-
-                
-
                 <!-- form start -->
-                <form action="<?php echo base_url() ?>admin/update" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url() ?>profil/insert" method="post" enctype="multipart/form-data">
                   <div class="box-body">
-
                     <div class="row">
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="nama_admin">Nama Admin</label>
-                          <div class="input-group col-md-8">
-                              <input class="form-control" type="hidden" id="id_admin" name="id_admin" value="<?= $data['id_admin'] ?>" required>
-                              <input type="text" class="form-control" placeholder="Nama Admin" name="nama_admin" value="<?= $data['nama_admin'] ?>" required>
-                              <input type="hidden" name="<?=$this->security->get_csrf_token_name(); ?>" value="<?=$this->security->get_csrf_hash(); ?>" style="display: none">
-                          </div>
+                      <div class="form-group">
+                        <label class="col-md-3" for="ttl">Visimisi</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                          <input type="text" class="form-control" placeholder="Visimisi" name="visimisi" required>
                         </div>
+                      </div>
 
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="email_admin">Email</label>
-                          <div class="input-group col-md-8">
-                              <input type="email" class="form-control" placeholder="Email" name="email_admin" value="<?= $data['email_admin'] ?>" required>
+                      <div class="form-group">
+                            <label class="col-sm-3 col-form-label">Struktur Organisasi</label>
+                            <div class="input-group col-sm-8 col-md-8">
+                             <input type="file" class="form-control" id="struktur_organisasi" name="struktur_organisasi" id="exampleInputUpload Foto1" placeholder="Upload Foto">
+                            </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Sejarah Tugas</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="text" class="form-control" placeholder="Sejarah Tugas" name="sejarah_tugas" required>
                           </div>
-                        </div>
+                      </div>
 
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="password_admin">Password</label>
-                          <div class="input-group col-md-8">
-                              <input type="password" class="form-control" placeholder="Password" name="password_admin" value="<?= $data['password_admin'] ?>" required>
+                      <div class="form-group">
+                          <label class="col-md-3 control-label" for="ttl">Kontak</label>
+                          <div class="input-group col-sm-8 col-md-8">
+                            <input type="number" class="form-control" placeholder="Kontak" name="kontak" required>
                           </div>
-                        </div>
-
+                      </div>
                     </div>
-
-
-
+                    
                     <div class="form-group">
                       <div class="row">
-                        <label class="col-md-4 control-label" for="name"></label>
+                        <label class="col-md-3 control-label" for="name"></label>
                         <div class="input-group col-md-8">
-                          <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Update</button>
-                          <a href="<?= base_url() ?>admin" class="btn btn-danger">Batal</a>
+                          <button type="submit" class="btn btn-primary" style="margin-right: 6px;">Simpan</button>
+                          <a href="<?= base_url() ?>profil" class="btn btn-danger">Batal</a>
                         </div>
                       </div>
                     </div>
-
-                  </div><!-- /.box-body -->
+                  </div>
 
                 </form>
               </div><!-- /.box -->

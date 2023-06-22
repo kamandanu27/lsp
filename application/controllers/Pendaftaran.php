@@ -74,13 +74,13 @@ class Pendaftaran extends CI_Controller {
 		{
 
 			$data = array(
-				'no_pendaftaran'     => $this->input->post('no_pendaftaran'),
+				'no_pendaftaran'    			=> $this->input->post('no_pendaftaran'),
 				'tgl_pendaftaran'   			=> $this->input->post('tgl_pendaftaran'),
-				'id_asesi'   		=> $this->input->post('id_asesi'),
-				'id_asesor'   		=> $this->input->post('id_asesor'),
-				'id_skema'   		=> $this->input->post('id_skema'),
-				'sertifikat'   		=> $this->input->post('sertifikat'),
-				'status_pendaftaran'   		=> $this->input->post('status_pendaftaran')
+				'id_asesi'   					=> $this->input->post('id_asesi'),
+				'id_asesor'   					=> $this->input->post('id_asesor'),
+				'id_skema'   					=> $this->input->post('id_skema'),
+				'sertifikat'   					=> $this->input->post('sertifikat'),
+				'status_pendaftaran'   			=> $this->input->post('status_pendaftaran')
 			);
 
 			$q = $this->pendaftaran->insert($data);
@@ -111,14 +111,14 @@ class Pendaftaran extends CI_Controller {
 				if ($this->form_validation->run()) 
 				{
 					$data = array(
-						'id_pendaftaran'		=> $this->input->post('id_pendaftaran'),
-						'no_pendaftaran'     => $this->input->post('no_pendaftaran'),
+						'id_pendaftaran'				=> $this->input->post('id_pendaftaran'),
+						'no_pendaftaran'     			=> $this->input->post('no_pendaftaran'),
 						'tgl_pendaftaran'   			=> $this->input->post('tgl_pendaftaran'),
-						'id_asesi'   		=> $this->input->post('id_asesi'),
-						'id_asesor'   		=> $this->input->post('id_asesor'),
-						'id_skema'   		=> $this->input->post('id_skema'),
-						'sertifikat'   		=> $this->input->post('sertifikat'),
-						'status_pendaftaran'   		=> $this->input->post('status_pendaftaran')
+						'id_asesi'   					=> $this->input->post('id_asesi'),
+						'id_asesor'   					=> $this->input->post('id_asesor'),
+						'id_skema'   					=> $this->input->post('id_skema'),
+						'sertifikat'   					=> $this->input->post('sertifikat'),
+						'status_pendaftaran'   			=> $this->input->post('status_pendaftaran')
 					);
 					$this->pendaftaran->update($data);
 			

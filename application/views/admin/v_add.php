@@ -55,7 +55,7 @@
                       <div class="form-group">
                           <label class="col-md-3 control-label" for="ttl">Password</label>
                           <div class="input-group col-sm-8 col-md-8">
-                            <input type="text" class="form-control" placeholder="Password" name="password_admin" required>
+                            <input type="password" class="form-control" placeholder="Password" name="password_admin" required>
                           </div>
                       </div>
                     </div>

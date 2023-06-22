@@ -44,7 +44,8 @@
                     <div class="row">
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="noregister_asesor">No. Register</label>
-                          <div class="input-group col-md-7" id="id_asesor" name="id_asesor" value="<?= $data['id_asesor'] ?>" required>
+                          <div class="input-group col-md-7">
+                              <input type="hidden" id="id_asesor" name="id_asesor" value="<?= $data['id_asesor'] ?>" required>
                               <input type="number" class="form-control" placeholder="No. Register" name="noregister_asesor" value="<?= $data['noregister_asesor'] ?>" required>
                               <input type="hidden" name="<?=$this->security->get_csrf_token_name(); ?>" value="<?=$this->security->get_csrf_hash(); ?>" style="display: none">
                           </div>
@@ -79,7 +80,7 @@
                         </div>
 
                         <div class="form-group">
-											  	<label class="col-md-4 control-label" for="exampleInputEmail1">Jenis Kelamin Pemohon:</label>
+											  	<label class="col-md-4 control-label" for="exampleInputEmail1">Jenis Kelamin Pemohon</label>
                           <div class="input-group col-md-7">
                               <select class="form-control" id="jeniskelamin_asesor" name="jeniskelamin_asesor">
                                 <option value="">Pilih</option>
@@ -87,11 +88,10 @@
                                 <option value="Perempuan">Perempuan</option>
                               </select>
                           </div>
-                          
 							         	</div>
 
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="exampleInputEmail1">Agama Pemohon:</label>
+                          <label class="col-md-4 control-label" for="exampleInputEmail1">Agama Pemohon</label>
                           <div class="input-group col-md-7">
                               <select class="form-control" id="agama_asesor" name="agama_asesor">
                                 <option value="">Pilih</option>

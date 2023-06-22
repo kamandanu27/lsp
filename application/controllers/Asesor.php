@@ -71,23 +71,23 @@ class Asesor extends CI_Controller {
 			$this->upload->do_upload('foto_asesor'); //upload foto produk
 
 			$data = array(
-				'noregister_asesor'   			=> $this->input->post('noregister_asesor'),
-				'nik_asesor'   				=> $this->input->post('nik_asesor'),
-				'nama_asesor'   			=> $this->input->post('nama_asesor'),
-				'alamat_asesor'   			=> $this->input->post('alamat_asesor'),
-				'notlp_asesor'   			=> $this->input->post('notlp_asesor'),
-				'jeniskelamin_asesor'     => $this->input->post('jeniskelamin_asesor'),
-				'agama_asesor'   			=> $this->input->post('agama_asesor'),
-				'tempatlahir_asesor'   			=> $this->input->post('tempatlahir_asesor'),
+				'noregister_asesor'   				=> $this->input->post('noregister_asesor'),
+				'nik_asesor'   						=> $this->input->post('nik_asesor'),
+				'nama_asesor'   					=> $this->input->post('nama_asesor'),
+				'alamat_asesor'   					=> $this->input->post('alamat_asesor'),
+				'notlp_asesor'   					=> $this->input->post('notlp_asesor'),
+				'jeniskelamin_asesor'    			=> $this->input->post('jeniskelamin_asesor'),
+				'agama_asesor'   					=> $this->input->post('agama_asesor'),
+				'tempatlahir_asesor'   				=> $this->input->post('tempatlahir_asesor'),
 				'tanggallahir_asesor'   			=> $this->input->post('tanggallahir_asesor'),
-				'provinsi_asesor'   			=> $this->input->post('provinsi_asesor'),
-				'kotakab_asesor'   			=> $this->input->post('kotakab_asesor'),
-				'jurusan_asesor'   			=> $this->input->post('jurusan_asesor'),
+				'provinsi_asesor'   				=> $this->input->post('provinsi_asesor'),
+				'kotakab_asesor'   					=> $this->input->post('kotakab_asesor'),
+				'jurusan_asesor'   					=> $this->input->post('jurusan_asesor'),
 				'programstudi_asesor'   			=> $this->input->post('programstudi_asesor'),
-				'email_asesor'   			=> $this->input->post('email_asesor'),
-				'password_asesor'   			=> $this->input->post('password_asesor'),
-				'foto_asesor'		=> $image,
-				'sertifikat_asesor'   			=> $this->input->post('sertifikat_asesor')
+				'email_asesor'   					=> $this->input->post('email_asesor'),
+				'password_asesor'   				=> $this->input->post('password_asesor'),
+				'foto_asesor'						=> $image,
+				'sertifikat_asesor'   				=> $this->input->post('sertifikat_asesor')
 			);
 
 			$q = $this->asesor->insert($data);
@@ -103,7 +103,7 @@ class Asesor extends CI_Controller {
 	{
 		$cek = $this->asesor->detail($this->input->post('id_asesor'))->row_array();
 		if($cek == null){
-			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
+			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data A Tidak Ditemukan');
 			redirect(base_url('asesor'),'refresh');
 		}else{
 
@@ -121,7 +121,7 @@ class Asesor extends CI_Controller {
 
 						$data = array(
 							'id_asesor'				=> $this->input->post('id_asesor'),
-							'foto_asesor'		=> $image
+							'foto_asesor'			=> $image
 
 						);
 						
@@ -130,23 +130,23 @@ class Asesor extends CI_Controller {
 				}
 
 				$data = array(
-					'id_asesor'				=> $this->input->post('id_asesor'),
-					'noregister_asesor'   			=> $this->input->post('noregister_asesor'),
-					'nik_asesor'   			=> $this->input->post('nik_asesor'),
-					'nama_asesor'   			=> $this->input->post('nama_asesor'),
-					'alamat_asesor'   			=> $this->input->post('alamat_asesor'),
-					'notlp_asesor'   			=> $this->input->post('notlp_asesor'),
-					'jeniskelamin_asesor'     => $this->input->post('jeniskelamin_asesor'),
-					'agama_asesor'   			=> $this->input->post('agama_asesor'),
-					'tempatlahir_asesor'   			=> $this->input->post('tempatlahir_asesor'),
+					'id_asesor'							=> $this->input->post('id_asesor'),
+					'noregister_asesor'   				=> $this->input->post('noregister_asesor'),
+					'nik_asesor'   						=> $this->input->post('nik_asesor'),
+					'nama_asesor'   					=> $this->input->post('nama_asesor'),
+					'alamat_asesor'   					=> $this->input->post('alamat_asesor'),
+					'notlp_asesor'   					=> $this->input->post('notlp_asesor'),
+					'jeniskelamin_asesor'   			=> $this->input->post('jeniskelamin_asesor'),
+					'agama_asesor'   					=> $this->input->post('agama_asesor'),
+					'tempatlahir_asesor'   				=> $this->input->post('tempatlahir_asesor'),
 					'tanggallahir_asesor'   			=> $this->input->post('tanggallahir_asesor'),
-					'provinsi_asesor'   			=> $this->input->post('provinsi_asesor'),
-					'kotakab_asesor'   			=> $this->input->post('kotakab_asesor'),
-					'jurusan_asesor'   			=> $this->input->post('jurusan_asesor'),
+					'provinsi_asesor'   				=> $this->input->post('provinsi_asesor'),
+					'kotakab_asesor'   					=> $this->input->post('kotakab_asesor'),
+					'jurusan_asesor'   					=> $this->input->post('jurusan_asesor'),
 					'programstudi_asesor'   			=> $this->input->post('programstudi_asesor'),
-					'email_asesor'   			=> $this->input->post('email_asesor'),
-					'password_asesor'   			=> $this->input->post('password_asesor'),
-					'sertifikat_asesor'   			=> $this->input->post('sertifikat_asesor')
+					'email_asesor'   					=> $this->input->post('email_asesor'),
+					'password_asesor'   				=> $this->input->post('password_asesor'),
+					'sertifikat_asesor'   				=> $this->input->post('sertifikat_asesor')
 				);
 
 				$this->asesor->update($data);
