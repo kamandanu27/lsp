@@ -67,7 +67,7 @@
                       </div>
 
                       <div class="form-group">
-									       <label class="col-md-3 control-label">Admin:</label>
+									       <label class="col-md-3 control-label">Admin</label>
                          <div class="input-group col-sm-8 col-md-8">
                             <select class="form-control" id="id_admin" name="id_admin">
                                 <option value="">Pilih</option>
