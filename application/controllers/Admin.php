@@ -7,6 +7,7 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Admin_model', 'admin');
+		$this->auth->cek();
 		$this->load->helper('tgl_indo');
 		$this->load->helper('security');
 	}
@@ -14,7 +15,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'title'			=> 'LSP',
+			'title'			=> $this->session->userdata('level').' - Admin',
 			'judul'			=> 'Data Admin',
 			'data' 			=> $this->admin->tabel()->result(),
 			'content'		=> 'admin/v_content',
@@ -26,8 +27,9 @@ class Admin extends CI_Controller {
 	public function add()
 	{
 		$data = array(
-			'title'			=> 'LSP',
+			'title'			=> $this->session->userdata('level').' - Tambah Admin',
 			'judul'			=> 'Tambah Data Admin',
+			'data' 			=> $this->admin->tabel(),
 			'content'		=> 'admin/v_add',
 			'ajax'	 		=> 'admin/v_ajax'
 		);
@@ -44,7 +46,7 @@ class Admin extends CI_Controller {
 		}else{
 
 			$data = array(
-				'title'			=> 'LSP',
+				'title'			=> $this->session->userdata('level').' - Edit Admin',
 				'judul'			=> 'Edit Data Admin',
 				'data' 			=> 	$this->admin->detail($id)->row_array(),
 				'content'		=> 'admin/v_edit',
@@ -52,7 +54,6 @@ class Admin extends CI_Controller {
 			);
 			$this->load->view('layout/v_wrapper', $data, FALSE);
 		}
-
 	}
 
 
@@ -61,13 +62,12 @@ class Admin extends CI_Controller {
 		$this->form_validation->set_rules('nama_admin', 'Nama admin', 'required',
 		array( 'required'  => '%s harus diisi!'));
 
-		if ($this->form_validation->run()) 
-		{
-
+		if ($this->form_validation->run()){
 			$data = array(
 				'nama_admin'     			=> $this->input->post('nama_admin'),
 				'email_admin'   			=> $this->input->post('email_admin'),
-				'password_admin'   			=> $this->input->post('password_admin')
+				'password_admin'   			=> $this->input->post('password_admin'),
+				'level'						=> 'Admin'
 			);
 
 			$q = $this->admin->insert($data);
@@ -76,12 +76,9 @@ class Admin extends CI_Controller {
 			redirect(base_url('admin'),'refresh');
 
 		}else{
-			
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data belum lengkap');
 			redirect(base_url('admin/add'),'refresh');
 		}
-
-		
 	}
 
 	public function update()
@@ -91,12 +88,10 @@ class Admin extends CI_Controller {
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
 			redirect(base_url('admin'),'refresh');
 		}else{
-
 				$this->form_validation->set_rules('id_admin', 'ID admin', 'required',
 				array( 'required'  => '%s harus diisi!'));
 
-				if ($this->form_validation->run()) 
-				{
+				if ($this->form_validation->run()){
 					$data = array(
 						'id_admin'					=> $this->input->post('id_admin'),
 						'nama_admin'     			=> $this->input->post('nama_admin'),
@@ -111,11 +106,7 @@ class Admin extends CI_Controller {
 					$this->session->set_flashdata('warning', '<i class="fa fa-check"></i> Peringatan! Data Belum Lengkap');
 					redirect(base_url('admin/edit/'.$this->input->post('id')),'refresh');
 				}
-
 		}
-
-		
-			
 	}
 
 	public function delete($id)
@@ -125,7 +116,6 @@ class Admin extends CI_Controller {
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
 			redirect(base_url('admin'),'refresh');
 		}else{
-
 			$data = array(
 				'id_admin'	=> $id
 			);
@@ -135,8 +125,18 @@ class Admin extends CI_Controller {
 			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dihapus');
 			redirect(base_url('admin'),'refresh');
 		}
-		
+	}
 
+	public function getadmin()
+	{
+		$id = $this->input->post('id_admin');
+		$array = array();
+		$cek = $this->admin->detail($id)->row_array();
+		if($cek !== null){
+			$array['id_admin']= $cek['id_admin'];
+			$array['harga_admin']= $cek['harga_admin'];
+		}
+		echo json_encode($array);
 	}
 
 }

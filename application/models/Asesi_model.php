@@ -58,7 +58,7 @@ class Asesi_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('tbl_asesi');
-		$this->db->where('email', $username);
+		$this->db->where('email_asesi', $username);
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -71,8 +71,8 @@ class Asesi_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_asesi');
 		$this->db->where(array(
-			'tbl_asesi.email' => $username,
-			'tbl_asesi.password' => sha1($password)
+			'tbl_asesi.email_asesi' => $username,
+			'tbl_asesi.password_asesi' => $password
 		));
 		$query = $this->db->get();
 		return $query->row();

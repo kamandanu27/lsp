@@ -58,6 +58,7 @@
                             <input type="password" class="form-control" placeholder="Password" name="password_admin" required>
                           </div>
                       </div>
+
                     </div>
                     
                     <div class="form-group">

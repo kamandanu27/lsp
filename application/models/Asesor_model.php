@@ -58,7 +58,7 @@ class Asesor_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('tbl_asesor');
-		$this->db->where('email', $username);
+		$this->db->where('email_asesor', $username);
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -71,8 +71,8 @@ class Asesor_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_asesor');
 		$this->db->where(array(
-			'tbl_asesor.email' => $username,
-			'tbl_asesor.password' => sha1($password)
+			'tbl_asesor.email_asesor' => $username,
+			'tbl_asesor.password_asesor' => $password
 		));
 		$query = $this->db->get();
 		return $query->row();

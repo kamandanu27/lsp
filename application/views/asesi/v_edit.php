@@ -80,7 +80,7 @@
                         </div>
 
                         <div class="form-group">
-											  	<label class="col-md-3 control-label" for="exampleInputEmail1">Jenis Kelamin Pemohon</label>
+											  	<label class="col-md-3 control-label" for="exampleInputEmail1">Jenis Kelamin</label>
                           <div class="input-group col-sm-8 col-md-8">
                               <select class="form-control" id="jeniskelamin_asesi" name="jeniskelamin_asesi">
                                 <option value="">Pilih</option>
@@ -91,7 +91,7 @@
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-3 control-label" for="exampleInputEmail1">Agama Pemohon</label>
+                          <label class="col-md-3 control-label" for="exampleInputEmail1">Agama</label>
                           <div class="input-group col-sm-8 col-md-8">
                               <select class="form-control" id="agama_asesi" name="agama_asesi">
                                 <option value="">Pilih</option>
@@ -168,9 +168,9 @@
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-3 control-label" for="nik_asesi">Password</label>
+                          <label class="col-md-3 control-label" for="password_asesi">Password</label>
                           <div class="input-group col-md-8">
-                              <input type="text" class="form-control" placeholder="Password" name="password_asesi" value="<?= $data['password_asesi'] ?>" required>
+                              <input type="password" class="form-control" placeholder="Password" name="password_asesi" value="<?= $data['password_asesi'] ?>" required>
                           </div>
                         </div>
 

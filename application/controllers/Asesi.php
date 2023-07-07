@@ -7,6 +7,7 @@ class Asesi extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Asesi_model', 'asesi');
+		$this->auth->cek();
 		$this->load->helper('tgl_indo');
 		$this->load->helper('security');
 	}
@@ -14,7 +15,7 @@ class Asesi extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'title'			=> 'LSP',
+			'title'			=> $this->session->userdata('level').' - Asesi',
 			'judul'			=> 'Data Asesi',
 			'data' 			=> $this->asesi->tabel()->result(),
 			'content'		=> 'asesi/v_content',
@@ -26,8 +27,9 @@ class Asesi extends CI_Controller {
 	public function add()
 	{
 		$data = array(
-			'title'			=> 'LSP',
+			'title'			=> $this->session->userdata('level').' - Tambah Asesi',
 			'judul'			=> 'Tambah Data Asesi',
+			'data' 			=> $this->asesi->tabel(),
 			'content'		=> 'asesi/v_add',
 			'ajax'	 		=> 'asesi/v_ajax'
 		);
@@ -42,9 +44,8 @@ class Asesi extends CI_Controller {
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data tidak ditemukan');
 			redirect(base_url('asesi'),'refresh');
 		}else{
-
 			$data = array(
-				'title'			=> 'LSP',
+				'title'			=> $this->session->userdata('level').' - Edit Asesi',
 				'judul'			=> 'Edit Data Asesi',
 				'data' 			=> 	$this->asesi->detail($id)->row_array(),
 				'content'		=> 'asesi/v_edit',
@@ -52,9 +53,7 @@ class Asesi extends CI_Controller {
 			);
 			$this->load->view('layout/v_wrapper', $data, FALSE);
 		}
-
 	}
-
 
 	public function insert()
 	{
@@ -88,16 +87,14 @@ class Asesi extends CI_Controller {
 				'programstudi_asesi'   			=> $this->input->post('programstudi_asesi'),
 				'email_asesi'   				=> $this->input->post('email_asesi'),
 				'password_asesi'   				=> $this->input->post('password_asesi'),
-				'foto_asesi'					=> $image
+				'foto_asesi'					=> $image,
+				'level'							=> 'Asesi'
 			);
 
 			$q = $this->asesi->insert($data);
 
 			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat, Tambah data berhasil');
 			redirect(base_url('asesi'),'refresh');
-
-		
-		
 	}
 
 	public function update()
@@ -107,7 +104,6 @@ class Asesi extends CI_Controller {
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
 			redirect(base_url('asesi'),'refresh');
 		}else{
-
 				$this->form_validation->set_rules('id_asesi', 'ID asesi', 'required',
 				array( 'required'  => '%s harus diisi!'));
 
@@ -124,12 +120,11 @@ class Asesi extends CI_Controller {
 
 						$data = array(
 							'id_asesi'				=> $this->input->post('id_asesi'),
-							'foto_asesi'		=> $image
-
+							'foto_asesi'			=> $image
 						);
 						
 						$q = $this->asesi->update($data);
-			
+
 				}
 
 				$data = array(
@@ -156,7 +151,7 @@ class Asesi extends CI_Controller {
 				$this->asesi->update($data);
 				$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
 				redirect(base_url('asesi'),'refresh');
-			}
+		}
 	}
 
 	public function delete($id)
@@ -176,8 +171,18 @@ class Asesi extends CI_Controller {
 			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dihapus');
 			redirect(base_url('asesi'),'refresh');
 		}
-		
+	}
 
+	public function getasesi()
+	{
+		$id = $this->input->post('id_asesi');
+		$array = array();
+		$cek = $this->asesi->detail($id)->row_array();
+		if($cek !== null){
+			$array['id_asesi']= $cek['id_asesi'];
+			$array['harga_asesi']= $cek['harga_asesi'];
+		}
+		echo json_encode($array);
 	}
 
 }

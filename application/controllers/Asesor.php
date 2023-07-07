@@ -7,6 +7,7 @@ class Asesor extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Asesor_model', 'asesor');
+		$this->auth->cek();
 		$this->load->helper('tgl_indo');
 		$this->load->helper('security');
 	}
@@ -14,7 +15,7 @@ class Asesor extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'title'			=> 'LSP',
+			'title'			=> $this->session->userdata('level').' - Asesor',
 			'judul'			=> 'Data Asesor',
 			'data' 			=> $this->asesor->tabel()->result(),
 			'content'		=> 'asesor/v_content',
@@ -26,14 +27,14 @@ class Asesor extends CI_Controller {
 	public function add()
 	{
 		$data = array(
-			'title'			=> 'LSP',
+			'title'			=> $this->session->userdata('level').' - Tambah Asesor',
 			'judul'			=> 'Tambah Data Asesor',
+			'data' 			=> $this->asesor->tabel(),
 			'content'		=> 'asesor/v_add',
 			'ajax'	 		=> 'asesor/v_ajax'
 		);
 		$this->load->view('layout/v_wrapper', $data, FALSE);
 	}
-
 
 	public function edit($id)
 	{
@@ -42,9 +43,8 @@ class Asesor extends CI_Controller {
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data tidak ditemukan');
 			redirect(base_url('asesor'),'refresh');
 		}else{
-
 			$data = array(
-				'title'			=> 'LSP',
+				'title'			=> $this->session->userdata('level').' - Edit Asesor',
 				'judul'			=> 'Edit Data Asesor',
 				'data' 			=> 	$this->asesor->detail($id)->row_array(),
 				'content'		=> 'asesor/v_edit',
@@ -52,9 +52,7 @@ class Asesor extends CI_Controller {
 			);
 			$this->load->view('layout/v_wrapper', $data, FALSE);
 		}
-
 	}
-
 
 	public function insert()
 	{
@@ -87,16 +85,14 @@ class Asesor extends CI_Controller {
 				'email_asesor'   					=> $this->input->post('email_asesor'),
 				'password_asesor'   				=> $this->input->post('password_asesor'),
 				'foto_asesor'						=> $image,
-				'sertifikat_asesor'   				=> $this->input->post('sertifikat_asesor')
+				'sertifikat_asesor'   				=> $this->input->post('sertifikat_asesor'),
+				'level'								=> 'Asesor'
 			);
 
 			$q = $this->asesor->insert($data);
 
 			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat, Tambah data berhasil');
 			redirect(base_url('asesor'),'refresh');
-
-		
-		
 	}
 
 	public function update()
@@ -106,8 +102,6 @@ class Asesor extends CI_Controller {
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data A Tidak Ditemukan');
 			redirect(base_url('asesor'),'refresh');
 		}else{
-
-
 				if($_FILES["foto_asesor"]['name'] !== ""){ //jika tidak ada upload foto
 
 					$image 								= time().'-'.$_FILES["foto_asesor"]['name']; //data post dari form
@@ -122,11 +116,9 @@ class Asesor extends CI_Controller {
 						$data = array(
 							'id_asesor'				=> $this->input->post('id_asesor'),
 							'foto_asesor'			=> $image
-
 						);
 						
 						$q = $this->asesor->update($data);
-			
 				}
 
 				$data = array(
@@ -146,13 +138,14 @@ class Asesor extends CI_Controller {
 					'programstudi_asesor'   			=> $this->input->post('programstudi_asesor'),
 					'email_asesor'   					=> $this->input->post('email_asesor'),
 					'password_asesor'   				=> $this->input->post('password_asesor'),
-					'sertifikat_asesor'   				=> $this->input->post('sertifikat_asesor')
+					'sertifikat_asesor'   				=> $this->input->post('sertifikat_asesor'),
+					'level_asesor'   					=> $this->input->post('level_asesor')
 				);
 
 				$this->asesor->update($data);
 				$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dirubah');
 				redirect(base_url('asesor'),'refresh');
-			}
+		}
 	}
 
 	public function delete($id)
@@ -162,7 +155,6 @@ class Asesor extends CI_Controller {
 			$this->session->set_flashdata('error', '<i class="fa fa-warning"></i> Peringatan! Data Tidak Ditemukan');
 			redirect(base_url('asesor'),'refresh');
 		}else{
-
 			$data = array(
 				'id_asesor'	=> $id
 			);
@@ -172,8 +164,18 @@ class Asesor extends CI_Controller {
 			$this->session->set_flashdata('success', '<i class="fa fa-check"></i> Selamat! Data Berhasil Dihapus');
 			redirect(base_url('asesor'),'refresh');
 		}
-		
+	}
 
+	public function getasesor()
+	{
+		$id = $this->input->post('id_asesor');
+		$array = array();
+		$cek = $this->asesor->detail($id)->row_array();
+		if($cek !== null){
+			$array['id_asesor']= $cek['id_asesor'];
+			$array['harga_asesor']= $cek['harga_asesor'];
+		}
+		echo json_encode($array);
 	}
 
 }

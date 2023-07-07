@@ -1,9 +1,9 @@
 <!-- Logo -->
         <a href="<?= base_url() ?>public/lte/index2.html" class="logo" style="background-color: black;" >
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>POSYANDU MANDIRI</b></span>
+          <span class="logo-mini"><b>ADMIN</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>POSYANDU MANDIRI</b></span>
+          <span class="logo-lg"><b>ADMIN</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation" style="background-color: #ffffff">
@@ -15,7 +15,7 @@
             <span class="icon-bar"></span>
           </a>
           <div style="padding: 5px;">
-          <h4>Sistem Informasi Posyandu</h4>
+          <h4>LSP</h4>
           </div>
           <div class="navbar-custom-menu">
           </div>

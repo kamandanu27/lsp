@@ -58,7 +58,7 @@ class Admin_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('tbl_admin');
-		$this->db->where('email', $username);
+		$this->db->where('email_admin', $username);
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -71,8 +71,8 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('tbl_admin');
 		$this->db->where(array(
-			'tbl_admin.email' => $username,
-			'tbl_admin.password' => sha1($password)
+			'tbl_admin.email_admin' => $username,
+			'tbl_admin.password_admin' => $password
 		));
 		$query = $this->db->get();
 		return $query->row();

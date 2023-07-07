@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 22, 2023 at 10:20 AM
+-- Generation Time: Jul 07, 2023 at 09:44 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -31,17 +31,18 @@ CREATE TABLE `tbl_admin` (
   `id_admin` int NOT NULL,
   `nama_admin` varchar(50) NOT NULL,
   `email_admin` varchar(50) NOT NULL,
-  `password_admin` varchar(30) NOT NULL
+  `password_admin` varchar(30) NOT NULL,
+  `level` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_admin`
 --
 
-INSERT INTO `tbl_admin` (`id_admin`, `nama_admin`, `email_admin`, `password_admin`) VALUES
-(1, 'alvin', 'abc@gmail.com', '12345'),
-(4, 'ijot', 'abc@gmail.com', '765'),
-(5, 'toma', 'fgh@gmail.com', '12345');
+INSERT INTO `tbl_admin` (`id_admin`, `nama_admin`, `email_admin`, `password_admin`, `level`) VALUES
+(1, 'Alvin Admin', 'admin@gmail.com', '123', 'Admin'),
+(5, 'Toma', 'qwerty@gmail.com', '123', 'Admin'),
+(7, 'Ijot', 'cbc@gmail.com', '123', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -68,16 +69,18 @@ CREATE TABLE `tbl_asesi` (
   `programstudi_asesi` varchar(50) NOT NULL,
   `email_asesi` varchar(50) NOT NULL,
   `password_asesi` varchar(50) NOT NULL,
-  `foto_asesi` text NOT NULL
+  `foto_asesi` text NOT NULL,
+  `level` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_asesi`
 --
 
-INSERT INTO `tbl_asesi` (`id_asesi`, `nim_asesi`, `nik_asesi`, `nama_asesi`, `alamat_asesi`, `notlp_asesi`, `jeniskelamin_asesi`, `agama_asesi`, `tempatlahir_asesi`, `tanggallahir_asesi`, `provinsi_asesi`, `kotakab_asesi`, `tahunmasuk_asesi`, `tahunlulus_asesi`, `jurusan_asesi`, `programstudi_asesi`, `email_asesi`, `password_asesi`, `foto_asesi`) VALUES
-(4, '1212', '123322', 'sfasa', 'srqxd', '1213421', 'Laki-Laki', 'Islam', 'WDW', '2023-06-10', 'SDS', 'QQWW1', '21919', '1313', 'WD', 'eee', 'qwsswe@gdg', '12345', '1686381345-3409.jpg'),
-(7, '43555', '5466233', 'alvin toma', 'cbc', '08897', 'Laki-Laki', 'Kristen', 'cirebon', '2023-06-10', 'jabar', 'kota', '1954', '1978', 'ti', 'iya', 'abc@gmail.com', '123', '1686375441-3339.jpg');
+INSERT INTO `tbl_asesi` (`id_asesi`, `nim_asesi`, `nik_asesi`, `nama_asesi`, `alamat_asesi`, `notlp_asesi`, `jeniskelamin_asesi`, `agama_asesi`, `tempatlahir_asesi`, `tanggallahir_asesi`, `provinsi_asesi`, `kotakab_asesi`, `tahunmasuk_asesi`, `tahunlulus_asesi`, `jurusan_asesi`, `programstudi_asesi`, `email_asesi`, `password_asesi`, `foto_asesi`, `level`) VALUES
+(7, '454', '324', 'Alvin Asesi', 'CBC', '0889', 'Laki-Laki', 'Islam', 'Cirebon', '2023-06-10', 'Jabar', 'Kota', '2023', '2022', 'TKJ', 'Iii', 'asesi@gmail.com', '123', '1686375441-3339.jpg', 'Asesi'),
+(8, '231', '3232', 'adda', 'cbc', '0889', 'Perempuan', 'Budha', 'disini', '2023-07-07', 'jabar', 'kota', '2023', '2015', 'yyy', 'oke', 'abc@gmail.com', '123', '1688701031-download.jpg', 'Asesi'),
+(9, '12', '243', 'azz', 'cbc', '8789', 'Perempuan', 'Islam', 'disini', '2023-07-07', 'jabar', 'kota', '2020', '2013', 'dd', 'oke', 'qwerty@gmail.com', '123', '1688701375-3409.jpg', 'Asesi');
 
 -- --------------------------------------------------------
 
@@ -103,15 +106,17 @@ CREATE TABLE `tbl_asesor` (
   `email_asesor` varchar(50) NOT NULL,
   `password_asesor` varchar(50) NOT NULL,
   `foto_asesor` text NOT NULL,
-  `sertifikat_asesor` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+  `sertifikat_asesor` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `level` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_asesor`
 --
 
-INSERT INTO `tbl_asesor` (`id_asesor`, `noregister_asesor`, `nik_asesor`, `nama_asesor`, `alamat_asesor`, `notlp_asesor`, `jeniskelamin_asesor`, `agama_asesor`, `tempatlahir_asesor`, `tanggallahir_asesor`, `provinsi_asesor`, `kotakab_asesor`, `jurusan_asesor`, `programstudi_asesor`, `email_asesor`, `password_asesor`, `foto_asesor`, `sertifikat_asesor`) VALUES
-(2, '1212', '2211', 'adaaw', 'dadss', '22313', 'Laki-Laki', 'Islam', 'cirebon', '2023-06-15', 'sdfddf', 'deeea', 'jurusan', 'program', 'wrew2@dsds', '123', '1687329193-3409.jpg', 'woke');
+INSERT INTO `tbl_asesor` (`id_asesor`, `noregister_asesor`, `nik_asesor`, `nama_asesor`, `alamat_asesor`, `notlp_asesor`, `jeniskelamin_asesor`, `agama_asesor`, `tempatlahir_asesor`, `tanggallahir_asesor`, `provinsi_asesor`, `kotakab_asesor`, `jurusan_asesor`, `programstudi_asesor`, `email_asesor`, `password_asesor`, `foto_asesor`, `sertifikat_asesor`, `level`) VALUES
+(2, '1212', '2211', 'Alvin Asesor', 'CBC', '0889', 'Laki-Laki', 'Islam', 'Cirebon', '2023-06-15', 'Jabar', 'Kota', 'TKJ', 'Program', 'asesor@gmail.com', '123', '1687329193-3409.jpg', 'Woke', 'Asesor'),
+(3, '212', '2342', 'alvin', 'cbc', '0889', 'Laki-Laki', 'Islam', 'cirebon', '2023-07-07', 'jabar', 'kota cirebon', 'dd', 'iya', 'cbc@gmail.com', '123', '1688701693-3339.jpg', 'woke', 'Asesor');
 
 -- --------------------------------------------------------
 
@@ -350,19 +355,19 @@ ALTER TABLE `tbl_tuk`
 -- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_asesi`
 --
 ALTER TABLE `tbl_asesi`
-  MODIFY `id_asesi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_asesi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_asesor`
 --
 ALTER TABLE `tbl_asesor`
-  MODIFY `id_asesor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_asesor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_event`

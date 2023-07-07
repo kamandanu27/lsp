@@ -59,7 +59,6 @@
                               <th style="width: 13%;text-align: center;">Jurusan</th>
                               <th style="width: 13%;text-align: center;">Program Studi</th>
                               <th style="width: 13%;text-align: center;">Email</th>
-                              <th style="width: 13%;text-align: center;">Password</th>
                               <th style="width: 13%;text-align: center;">Foto</th>
                               <th style="width: 13%;text-align: center;">Aksi</th>
                           </tr>
@@ -84,7 +83,6 @@
                               <td><?= $row->jurusan_asesi ?></td>
                               <td><?= $row->programstudi_asesi ?></td>
                               <td><?= $row->email_asesi ?></td>
-                              <td><?= $row->password_asesi ?></td>
                               <td>
 									              <img src="<?= base_url() ?>/public/image/upload/asesi/<?= $row->foto_asesi ?>" style="width: 80px; height: 100px;">
 						            			</td>

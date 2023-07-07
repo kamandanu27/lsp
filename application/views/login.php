@@ -77,8 +77,8 @@
                                         <div class="col-md-12">
                                             <div class="text-center" style="margin-bottom: 20px;">
                                                 <!-- <img src="<?= base_url() ?>public/adminty-html/files/assets/images/auth/logoneww.jpeg" alt="logo.png" width="200px;" style="rounded: 20%;"> -->
-                                                <h3>LOGIN PRESENSI</h3>
-                                                 <span class="text-center" style="font-size: 16px;">Sistem Informasi Penjemputan Siswa</span>
+                                                <h3>LOGIN</h3>
+                                                 <span class="text-center" style="font-size: 16px;">LSP</span>
                                                  <br>
                                             </div>
 
@@ -108,6 +108,13 @@
                                     <div class="form-group form-primary">
                                         <input type="password" id="password" name="password" class="form-control" required="" placeholder="Password">
                                         <span class="form-bar"></span>
+                                    </div>
+                                    <div class="form-group form-primary">
+                                        <select class="form-control" id="level" name="level" required>
+                                            <option value="Admin">Admin</option>
+                                            <option value="Asesi">Asesi</option>
+                                            <option value="Asesor">Asesor</option>
+                                        </select>
                                     </div>
                                     <div class="row m-t-25 text-left">
                                         <div class="col-12">
